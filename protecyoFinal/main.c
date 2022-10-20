@@ -2,6 +2,7 @@
 void cargaUsuario(heroe *jug);
 int main()
 {
+    printf("Hello World");
     /// inicio del setup
 
     srand (time(NULL)); ///para dar verdadera randomizacion a los rand
