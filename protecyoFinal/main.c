@@ -2,6 +2,7 @@
 void cargaUsuario(heroe *jug);
 int main()
 {
+    printf("asdasd");
     /// inicio del setup
 
     srand (time(NULL)); ///para dar verdadera randomizacion a los rand
@@ -99,6 +100,7 @@ void cargaUsuario(heroe *jug)
     jug->danio=0;
     jug->vidaActual=10;
 }
+
 /*nodoArbol*cargaMapa()
 {
 
