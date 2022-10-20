@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1662514520 source:d:\utn\laboratorio 2\protecyofinal\main.c
+	"libreriaNueva.h"
+
+1662511182 source:d:\utn\laboratorio 2\protecyofinal\libreria.c
+	"libreria.h"
+
+1662511182 d:\utn\laboratorio 2\protecyofinal\libreria.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1662511182 source:d:\utn\laboratorio 2\protecyofinal\libreria.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1662562189 source:d:\utn\laboratorio 2\protecyofinal\librerianueva.c
+	"libreriaNueva.h"
+
+1665516842 d:\utn\laboratorio 2\protecyofinal\librerianueva.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1662512712 source:d:\utn\laboratorio 2\protecyofinal\librerianueva.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
