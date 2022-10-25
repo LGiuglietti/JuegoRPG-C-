@@ -2,8 +2,6 @@
 void cargaUsuario(heroe *jug);
 int main()
 {
-    printf("Hello World");
-    printf("asdasd");
     /// inicio del setup
 
     srand (time(NULL)); ///para dar verdadera randomizacion a los rand
@@ -53,6 +51,7 @@ int main()
                 }
                 else
                 {
+                    //funcion movimiento
 
                 }
                 break;
@@ -66,12 +65,29 @@ int main()
 
                 }
                 break;
+
+                }
+            case 2:
+                if(gpsX==0 && gpsY==0)
+                {
+                    printf("cuando nuestro heroe intenta salir del castillo, se percata de que las puertas estan cerradas");
+                }
+                else
+                {
+                    //movimientoRetroceso
+                }
+                break;
             case 3:
+                /*inventario es una lista (para utilizar mejor la memoria)
+                deberia el jugador se capaz de elegir lo que quiera del inventario y usarlo
+                (pociones de curacion y pergaminos)*/
+
                 break;
             case 4:
+                //guarda lista de arboles el estado actual del mapa bajo el nombre del heroe
+
                 break;
             }
-        }
 
     }//fin del bucle
     return 0;
@@ -79,9 +95,9 @@ int main()
 void combate()
 {
     FILE *archi=fopen("mobs.bin","rb");
-
-    int aux=0;
-    switch (aux)
+    mob aux;
+    int variableSwitch=0;
+    switch (variableSwitch)
     {
     case 1:
         break;

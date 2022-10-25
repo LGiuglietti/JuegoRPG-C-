@@ -36,3 +36,14 @@
 	<stdio.h>
 	<stdlib.h>
 
+1662562189 source:d:\utn\git juego\juegorpg-c-\protecyofinal\librerianueva.c
+	"libreriaNueva.h"
+
+1666660727 d:\utn\git juego\juegorpg-c-\protecyofinal\librerianueva.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1666660753 source:d:\utn\git juego\juegorpg-c-\protecyofinal\main.c
+	"libreriaNueva.h"
+

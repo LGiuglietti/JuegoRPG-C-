@@ -27,14 +27,14 @@ typedef struct
     objeto inventario[10];
 }heroe;
 
-typedef struct nodo
+typedef struct nodoArbol
 {
     int dirX;
     int dirY;
     int estado; ///1 completado, 0 no completado
     int encuentro;
     struct nodo*sig;
-}nodo;
+}nodoArbol;
 typedef struct mob
 {
     char nombre[30];
