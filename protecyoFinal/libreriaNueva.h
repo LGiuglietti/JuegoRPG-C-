@@ -3,19 +3,14 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <windows.h>
 typedef struct objeto
 {
-    char nombre[30];
-    int mod; ///numeros positivos= modificadores danio, 0=pocion, numeros negativos=armaduras
-    int estado; ///1=espacio usado, 0=espacio libre, por defecto 0
-} objeto;
-
-typedef struct objetoMagico
-{
-    char nombre[30];
     char prefacio[200];
-    int mod;
-}objetoMagico;
+    char nombre[30];
+    int modificador; ///danio o curacion
+    int tipo;///0. Pergamino, 1. Pocion,2. Arma,3. Armadura,-1. Inventario Vacio
+} objeto;
 
 typedef struct
 {
@@ -24,17 +19,11 @@ typedef struct
     int vidaActual;
     int danio;
     int armadura;
-    objeto inventario[10];
+    int cantidadCombates;
+    objeto inventario[7];
+    int habitacionActual; //del 1 al 7, 4 es la inicial
 }heroe;
 
-typedef struct nodoArbol
-{
-    int dirX;
-    int dirY;
-    int estado; ///1 completado, 0 no completado
-    int encuentro;
-    struct nodo*sig;
-}nodoArbol;
 typedef struct mob
 {
     char nombre[30];
@@ -43,5 +32,6 @@ typedef struct mob
     int danio;
     int estado;///0 muerto, 1 vivo
 }mob;
-void recogerLootCofre(heroe jugador, int *validosArchivoArmas, int *validosArchivoArmaduras);
+
+void recogerLootCofre(heroe jugador);
 #endif // LIBRERIANUEVA_H_INCLUDED
