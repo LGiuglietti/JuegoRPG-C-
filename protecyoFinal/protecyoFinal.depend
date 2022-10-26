@@ -31,7 +31,26 @@
 1666304175 source:c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\protecyofinal\librerianueva.c
 	"libreriaNueva.h"
 
-1666304175 c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\protecyofinal\librerianueva.h
+1666751860 c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\protecyofinal\librerianueva.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1666304506 source:c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\protecyofinal\main.c
+	"libreriaNueva.h"
+
+1666750383 source:c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\protecyofinal\objetos.c
+	"Objetos.h"
+
+1666751252 c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\protecyofinal\objetos.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1666752623 source:c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\protecyofinal\nodo.c
+	"Nodo.h"
+
+1666752623 c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\protecyofinal\nodo.h
 	<string.h>
 	<stdio.h>
 	<stdlib.h>
