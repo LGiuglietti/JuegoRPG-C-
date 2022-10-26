@@ -58,6 +58,7 @@ MENU:
             if(jugador.habitacionActual==4)
             {
                 printf("cuando nuestro heroe intenta salir del castillo, se percata de que las puertas estan cerradas");
+                printf("prueba rama");
             }
             else
             {
