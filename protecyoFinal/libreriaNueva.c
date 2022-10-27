@@ -1,6 +1,6 @@
 #include "libreriaNueva.h"
-#include "Codito2.h"
-void recogerLootCofre(heroe jugador, nododoble*lista)
+
+/*void recogerLootCofre(heroe jugador, nododoble*lista)
 {
     int cantEspaciosUsados=contarItemsInventario(lista);
     if(cantEspaciosUsados<10)
@@ -11,7 +11,8 @@ void recogerLootCofre(heroe jugador, nododoble*lista)
             int decisionCofre=0;
             printf("desea tomar la pocion o el pergamino");
             printf("1. pocion\t2. pergamino");
-            scanf(&decisionCofre);
+            fflush(stdin);
+            scanf("%i",&decisionCofre);
             if(decisionCofre==1)
             {
                 objeto poti;
@@ -23,12 +24,14 @@ void recogerLootCofre(heroe jugador, nododoble*lista)
             else
             {
                 FILE*archi=fopen("pergaminos.bin","rb");
-                decisionCofre=rand()%10;
+                if(archi!=NULL)
+                {
+                    decisionCofre=rand()%10;
                 fseek(archi,sizeof(objeto)*decisionCofre,1);
                 objeto pergamino;
                 fread(&pergamino,sizeof(objeto),SEEK_CUR,archi);
                 lista=agregarfinal2(lista,pergamino);
-
+                }
             }
         }
         else
@@ -74,4 +77,4 @@ void recogerLootCofre(heroe jugador, nododoble*lista)
         jugador.armadura=loot.modificador;
         fclose(archi);
     }
-}
+}*/

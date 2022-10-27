@@ -5,7 +5,7 @@ nododoble* iniclista()
     return NULL;
 }
 
-nododoble* crearnodo(objeto objetito)
+nododoble* crearnodo(Objeto objetito)
 {
     nododoble* nuevo=(nododoble*) malloc(sizeof(nododoble));
 
@@ -16,12 +16,15 @@ nododoble* crearnodo(objeto objetito)
     return nuevo;
 }
 
-nododoble* agregarfinal2(nododoble* lista, objeto objetito)
+nododoble* agregarfinal2(nododoble* lista, nododoble* nuevo)
 {
-    if(lista!=NULL)
+    if(lista==NULL)
+    {
+        lista=nuevo;
+    }
+    else
     {
         nododoble* ultimo=buscarultimo(lista);
-        nododoble*nuevo=crearnodo(objetito);
         ultimo->sig=nuevo;
         nuevo->ante=ultimo;
     }

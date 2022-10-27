@@ -72,3 +72,47 @@
 	<stdio.h>
 	<stdlib.h>
 
+1666883966 source:c:\users\usuario\downloads\juegorpg-c--coditooo\protecyofinal\arbol.c
+	"arbol.h"
+
+1666885907 c:\users\usuario\downloads\juegorpg-c--coditooo\protecyofinal\arbol.h
+	<stdio.h>
+	<stdlib.h>
+
+1666883824 source:c:\users\usuario\downloads\juegorpg-c--coditooo\protecyofinal\codito2.c
+	"Codito2.h"
+
+1666883737 c:\users\usuario\downloads\juegorpg-c--coditooo\protecyofinal\codito2.h
+	"Objeto.h"
+
+1666883694 c:\users\usuario\downloads\juegorpg-c--coditooo\protecyofinal\objeto.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1666884900 source:c:\users\usuario\downloads\juegorpg-c--coditooo\protecyofinal\main.c
+	<stdio.h>
+	<stdlib.h>
+	"libreriaNueva.h"
+	"arbol.h"
+	<time.h>
+
+1666883991 c:\users\usuario\downloads\juegorpg-c--coditooo\protecyofinal\librerianueva.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	"Codito2.h"
+
+1666884012 source:c:\users\usuario\downloads\juegorpg-c--coditooo\protecyofinal\librerianueva.c
+	"libreriaNueva.h"
+
+1666883694 source:c:\users\usuario\downloads\juegorpg-c--coditooo\protecyofinal\objeto.c
+	"Objeto.h"
+
+1666885907 source:c:\users\usuario\downloads\juegorpg-c--coditooo\protecyofinal\inventario.c
+	"Inventario.h"
+
+1666885907 c:\users\usuario\downloads\juegorpg-c--coditooo\protecyofinal\inventario.h
+	"Codito2.h"
+

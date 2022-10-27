@@ -1,14 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "libreriaNueva.h"
 #include "arbol.h"
-void cargaUsuario(heroe *jug);
+#include <time.h>
+
+//void cargaUsuario(heroe *jug);
 nodoArbol*cargaMapa(nodoArbol*arbol);
 int main()
 {
     /// inicio del setup
 
-    srand (time(NULL)); ///para dar verdadera randomizacion a los rand
-    heroe jugador;
-    cargaUsuario(&jugador);
+    srand(time(NULL)); ///Declara el seed para el rand
+//    heroe jugador;
+//    cargaUsuario(&jugador);
     nodoArbol*mapa=inicArbol();
     mapa=cargaMapa(mapa);
 
@@ -16,7 +20,7 @@ int main()
 
     int fin=0; //0=no se completo mazmorra, 1=se completo mazmorra
     int aux=0;
-MENU:
+///MENU:
     while(fin==0)
     {
         printf("que desea hacer?");
@@ -28,7 +32,7 @@ MENU:
         if(aux>4)
         {
             printf("no existe opcion 5, elija de vuelta");
-            goto MENU;
+//            goto MENU;
         }
         switch(aux)
         {
@@ -55,12 +59,12 @@ MENU:
             }
         //movimiento izquierda derecha
         case 2:
-            if(jugador.habitacionActual==4)
+//            if(jugador.habitacionActual==4)
             {
                 printf("cuando nuestro heroe intenta salir del castillo, se percata de que las puertas estan cerradas");
                 printf("prueba rama");
             }
-            else
+//            else
             {
                 //movimientoRetroceso
             }
@@ -78,7 +82,7 @@ MENU:
     }//fin del bucle
     return 0;
 }
-void combate(heroe*jug)
+/*void combate(heroe*jug)
 {
     FILE *archi=fopen("mobs.bin","rb");
     mob aux;
@@ -153,7 +157,7 @@ void cargaUsuario(heroe *jug)
     jug->danio=0;
     jug->vidaActual=10;
     jug->habitacionActual=4;
-}
+}*/
 nodoArbol*cargaMapa(nodoArbol*arbol)
 {
     arbol=insertar(arbol,4);
@@ -165,4 +169,5 @@ nodoArbol*cargaMapa(nodoArbol*arbol)
     arbol=insertar(arbol,7);
     return arbol;
 }
+
 
