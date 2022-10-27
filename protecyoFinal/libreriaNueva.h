@@ -4,14 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <windows.h>
-typedef struct objeto
-{
-    char prefacio[200];
-    char nombre[30];
-    int modificador; ///danio o curacion
-    int tipo;///0. Pergamino, 1. Pocion,2. Arma,3. Armadura,-1. Inventario Vacio
-} objeto;
-
+#include "Codito2.h"
 typedef struct
 {
     char nombre[30];
@@ -20,7 +13,6 @@ typedef struct
     int danio;
     int armadura;
     int cantidadCombates;
-    objeto inventario[7];
     int habitacionActual; //del 1 al 7, 4 es la inicial
 }heroe;
 
@@ -33,5 +25,5 @@ typedef struct mob
     int estado;///0 muerto, 1 vivo
 }mob;
 
-void recogerLootCofre(heroe jugador);
+void recogerLootCofre(heroe jugador, nododoble*lista);
 #endif // LIBRERIANUEVA_H_INCLUDED

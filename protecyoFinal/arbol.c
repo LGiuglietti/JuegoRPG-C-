@@ -59,7 +59,7 @@ void postorder(nodoArbol*arbol)
         printf("%d", arbol->id);
     }
 }
-nodoArbol*buscar(nodoArbol*arbol, int dato)
+nodoArbol*buscarArbol(nodoArbol*arbol, int dato)
 {
     nodoArbol*rta=NULL;
     if(arbol!=NULL)

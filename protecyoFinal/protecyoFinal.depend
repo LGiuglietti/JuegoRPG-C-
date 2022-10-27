@@ -36,24 +36,39 @@
 	<stdio.h>
 	<stdlib.h>
 
-1666732574 source:d:\utn\git juego\juegorpg-c-\protecyofinal\librerianueva.c
+1666837177 source:d:\utn\git juego\juegorpg-c-\protecyofinal\librerianueva.c
 	"libreriaNueva.h"
+	"Codito2.h"
 
-1666733756 d:\utn\git juego\juegorpg-c-\protecyofinal\librerianueva.h
+1666836548 d:\utn\git juego\juegorpg-c-\protecyofinal\librerianueva.h
 	<string.h>
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
+	"Codito2.h"
 
-1666729716 source:d:\utn\git juego\juegorpg-c-\protecyofinal\main.c
+1666814788 source:d:\utn\git juego\juegorpg-c-\protecyofinal\main.c
 	"libreriaNueva.h"
 	"arbol.h"
-	<windows.h>
 
-1666729287 source:d:\utn\git juego\juegorpg-c-\protecyofinal\arbol.c
+1666836782 source:d:\utn\git juego\juegorpg-c-\protecyofinal\arbol.c
 	"arbol.h"
 
-1666727967 d:\utn\git juego\juegorpg-c-\protecyofinal\arbol.h
+1666836782 d:\utn\git juego\juegorpg-c-\protecyofinal\arbol.h
+	<stdio.h>
+	<stdlib.h>
+
+1666836734 source:d:\utn\git juego\juegorpg-c-\protecyofinal\codito2.c
+	"Codito2.h"
+
+1666837190 d:\utn\git juego\juegorpg-c-\protecyofinal\codito2.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"Objeto.h"
+
+1666814788 d:\utn\git juego\juegorpg-c-\protecyofinal\objeto.h
+	<string.h>
 	<stdio.h>
 	<stdlib.h>
 

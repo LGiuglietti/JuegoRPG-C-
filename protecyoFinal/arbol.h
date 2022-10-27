@@ -17,7 +17,7 @@ nodoArbol*insertar(nodoArbol*arbol,int dato);
 void preorder(nodoArbol*arbol);
 void inorder(nodoArbol*arbol);
 void postorder(nodoArbol*arbol);
-nodoArbol*buscar(nodoArbol*arbol, int dato);
+nodoArbol*buscarArbol(nodoArbol*arbol, int dato);
 nodoArbol*NMI(nodoArbol*nodo);
 nodoArbol*NMD(nodoArbol*nodo);
 nodoArbol*borrarNodo(nodoArbol*nodo, int dato);
