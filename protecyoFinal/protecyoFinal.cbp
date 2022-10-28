@@ -35,6 +35,17 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Codito2.h" />
+		<Unit filename="Inventario.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Inventario.h" />
+		<Unit filename="Jugador.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Jugador.h" />
+		<Unit filename="Objeto.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Objeto.h" />
 		<Unit filename="arbol.c">
 			<Option compilerVar="CC" />

@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <windows.h>
 #include "Codito2.h"
+/*
 typedef struct
 {
     char nombre[30];
@@ -14,7 +15,7 @@ typedef struct
     int armadura;
     int cantidadCombates;
     int habitacionActual; //del 1 al 7, 4 es la inicial
-}heroe;
+}heroe;*/
 
 typedef struct mob
 {
@@ -25,5 +26,5 @@ typedef struct mob
     int estado;///0 muerto, 1 vivo
 }mob;
 
-void recogerLootCofre(heroe jugador, nododoble*lista);
+//void recogerLootCofre(heroe jugador, nododoble*lista);
 #endif // LIBRERIANUEVA_H_INCLUDED

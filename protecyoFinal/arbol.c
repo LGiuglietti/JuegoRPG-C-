@@ -1,9 +1,10 @@
 #include "arbol.h"
-nodoArbol*inicArbol()
+
+nodoArbol* inicArbol()
 {
     return NULL;
 }
-nodoArbol*crearNodoArbol(int dato)
+nodoArbol* crearNodoArbol(int dato)
 {
     nodoArbol*aux=(nodoArbol*)malloc(sizeof(nodoArbol));
     aux->id=dato;
@@ -13,7 +14,7 @@ nodoArbol*crearNodoArbol(int dato)
     aux->estado=0;
     return aux;
 }
-nodoArbol*insertar(nodoArbol*arbol,int dato)
+nodoArbol* insertar(nodoArbol*arbol,int dato)
 {
     if(arbol==NULL)
     {
@@ -32,7 +33,7 @@ nodoArbol*insertar(nodoArbol*arbol,int dato)
     }
     return arbol;
 }
-void preorder(nodoArbol*arbol)
+void preorder(nodoArbol* arbol)
 {
     if(arbol!=NULL)
     {
@@ -41,16 +42,16 @@ void preorder(nodoArbol*arbol)
         preorder(arbol->derecha);
     }
 }
-void inorder(nodoArbol*arbol)
+void inorder(nodoArbol* arbol)
 {
     if(arbol!=NULL)
     {
         inorder(arbol->izquierda);
-        printf("%d", arbol->id);
+        printf("%d",arbol->id);
         inorder(arbol->derecha);
     }
 }
-void postorder(nodoArbol*arbol)
+void postorder(nodoArbol* arbol)
 {
     if(arbol!=NULL)
     {
@@ -59,7 +60,7 @@ void postorder(nodoArbol*arbol)
         printf("%d", arbol->id);
     }
 }
-nodoArbol*buscarArbol(nodoArbol*arbol, int dato)
+nodoArbol* buscarArbol(nodoArbol*arbol, int dato)
 {
     nodoArbol*rta=NULL;
     if(arbol!=NULL)
@@ -72,17 +73,17 @@ nodoArbol*buscarArbol(nodoArbol*arbol, int dato)
         {
             if(dato>arbol->id)
             {
-                rta=buscar(arbol->derecha,dato);
+                rta=buscarArbol(arbol->derecha,dato);
             }
             else
             {
-                rta=buscar(arbol->izquierda,dato);
+                rta=buscarArbol(arbol->izquierda,dato);
             }
         }
     }
     return rta;
 }
-int esHoja (nodoArbol*nodo)
+int esHoja (nodoArbol* nodo)
 {
     int rta=0;
     if((nodo->derecha==NULL) && (nodo->derecha==NULL))
