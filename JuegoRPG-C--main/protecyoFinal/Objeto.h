@@ -17,15 +17,5 @@ typedef struct Objeto
 } Objeto;
 
 Objeto crearobjeto(); ///Crea un objeto
-void persistenciaobj(Objeto elobjeto); /// Carga a un archivo un objeto
-void persistirpergamino(Objeto elobjeto);
-void persistirpocion(Objeto elobjeto);
-void persistirarma(Objeto elobjeto);
-void persistirarmadura(Objeto elobjeto);
-Objeto depersistenciaobjetos(int tipo,int* ultimo); ///Trae de un archivo un objeto, el puntero para no leer 2 veces el mismo objeto
-Objeto depersistirpergamino(int ultimo);
-Objeto depersistirpocion(int ultimo);
-Objeto depersistirarma(int ultimo);
-Objeto depersistirarmadura(int ultimo);
 
 #endif // OBJETO_H_INCLUDED

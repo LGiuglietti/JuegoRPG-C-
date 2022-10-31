@@ -2,11 +2,11 @@
 #define ARBOL_H_INCLUDED
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "Jugador.h"
+#include "libreriaNueva.h"
 typedef struct nodoArbol
 {
     int id; ///del 1 al 7, inicia en 4
-    //int nrohabitacion;
     int estado; ///1 completado, 0 no completado
     int encuentro; ///1 si es combate, 0 si es cofre
     struct nodoArbol* derecha; //apunta a derecha
@@ -24,5 +24,10 @@ nodoArbol* NMI(nodoArbol* nodo);
 nodoArbol* NMD(nodoArbol* nodo);
 nodoArbol* borrarNodo(nodoArbol* nodo, int dato);
 int esHoja (nodoArbol* nodo);
+// prototipado manejo de mapa
+nodoArbol*cargaMapa(nodoArbol*arbol);
+void avanzarIzquierda(nodoArbol*mapa, int habitacionActual, Heroe*jugador);
+void avanzarDerecha(nodoArbol*mapa, int habitacionActual, Heroe*jugador);
+// fin prototipado manejo de mapa
 
 #endif // ARBOL_H_INCLUDED
