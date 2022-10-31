@@ -17,9 +17,6 @@ typedef struct heroe
     nododoble* inventarioheroe;
 }Heroe;
 
-Heroe crearheroe();///Crea un heroe listo para la aventura
-Heroe recogerloot(Heroe jugador, Objeto elobjeto);
-int inventariolleno(nododoble* inventarioheroe);
-Heroe actualizaciondestats(Objeto elobjeto);
-
+void cargaUsuario(Heroe *jug);
+void combate(Heroe*jug);
 #endif // JUGADOR_H_INCLUDED

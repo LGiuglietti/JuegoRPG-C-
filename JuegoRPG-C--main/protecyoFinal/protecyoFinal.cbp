@@ -47,10 +47,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Objeto.h" />
-		<Unit filename="arbol.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="arbol.h" />
 		<Unit filename="libreriaNueva.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -58,6 +54,10 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="mapa.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="mapa.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
