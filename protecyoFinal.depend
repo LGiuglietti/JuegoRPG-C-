@@ -1,0 +1,245 @@
+# depslib dependency file v1.0
+1662514520 source:d:\utn\laboratorio 2\protecyofinal\main.c
+	"libreriaNueva.h"
+
+1662511182 source:d:\utn\laboratorio 2\protecyofinal\libreria.c
+	"libreria.h"
+
+1662511182 d:\utn\laboratorio 2\protecyofinal\libreria.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1662511182 source:d:\utn\laboratorio 2\protecyofinal\libreria.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1662562189 source:d:\utn\laboratorio 2\protecyofinal\librerianueva.c
+	"libreriaNueva.h"
+
+1665516842 d:\utn\laboratorio 2\protecyofinal\librerianueva.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1662512712 source:d:\utn\laboratorio 2\protecyofinal\librerianueva.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1666304175 source:c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\protecyofinal\librerianueva.c
+	"libreriaNueva.h"
+
+1666304175 c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\protecyofinal\librerianueva.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1666837177 source:d:\utn\git juego\juegorpg-c-\protecyofinal\librerianueva.c
+	"libreriaNueva.h"
+	"Codito2.h"
+
+1666836548 d:\utn\git juego\juegorpg-c-\protecyofinal\librerianueva.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	"Codito2.h"
+
+1666814788 source:d:\utn\git juego\juegorpg-c-\protecyofinal\main.c
+	"libreriaNueva.h"
+	"arbol.h"
+
+1666836782 source:d:\utn\git juego\juegorpg-c-\protecyofinal\arbol.c
+	"arbol.h"
+
+1666836782 d:\utn\git juego\juegorpg-c-\protecyofinal\arbol.h
+	<stdio.h>
+	<stdlib.h>
+
+1666836734 source:d:\utn\git juego\juegorpg-c-\protecyofinal\codito2.c
+	"Codito2.h"
+
+1666837190 d:\utn\git juego\juegorpg-c-\protecyofinal\codito2.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"Objeto.h"
+
+1666814788 d:\utn\git juego\juegorpg-c-\protecyofinal\objeto.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1666883966 source:c:\users\usuario\downloads\juegorpg-c--coditooo\protecyofinal\arbol.c
+	"arbol.h"
+
+1666885907 c:\users\usuario\downloads\juegorpg-c--coditooo\protecyofinal\arbol.h
+	<stdio.h>
+	<stdlib.h>
+
+1666883824 source:c:\users\usuario\downloads\juegorpg-c--coditooo\protecyofinal\codito2.c
+	"Codito2.h"
+
+1666883737 c:\users\usuario\downloads\juegorpg-c--coditooo\protecyofinal\codito2.h
+	"Objeto.h"
+
+1666883694 c:\users\usuario\downloads\juegorpg-c--coditooo\protecyofinal\objeto.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1666884900 source:c:\users\usuario\downloads\juegorpg-c--coditooo\protecyofinal\main.c
+	<stdio.h>
+	<stdlib.h>
+	"libreriaNueva.h"
+	"arbol.h"
+	<time.h>
+
+1666883991 c:\users\usuario\downloads\juegorpg-c--coditooo\protecyofinal\librerianueva.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	"Codito2.h"
+
+1666884012 source:c:\users\usuario\downloads\juegorpg-c--coditooo\protecyofinal\librerianueva.c
+	"libreriaNueva.h"
+
+1666883694 source:c:\users\usuario\downloads\juegorpg-c--coditooo\protecyofinal\objeto.c
+	"Objeto.h"
+
+1666885907 source:c:\users\usuario\downloads\juegorpg-c--coditooo\protecyofinal\inventario.c
+	"Inventario.h"
+
+1666885907 c:\users\usuario\downloads\juegorpg-c--coditooo\protecyofinal\inventario.h
+	"Codito2.h"
+
+1667245102 source:d:\utn\git juego\juegorpg-c-\juegorpg-c--main\protecyofinal\arbol.c
+	"arbol.h"
+
+1667245102 d:\utn\git juego\juegorpg-c-\juegorpg-c--main\protecyofinal\arbol.h
+	<stdio.h>
+	<stdlib.h>
+
+1667245102 source:d:\utn\git juego\juegorpg-c-\juegorpg-c--main\protecyofinal\codito2.c
+	"Codito2.h"
+
+1667245102 d:\utn\git juego\juegorpg-c-\juegorpg-c--main\protecyofinal\codito2.h
+	"Objeto.h"
+
+1667250620 d:\utn\git juego\juegorpg-c-\juegorpg-c--main\protecyofinal\objeto.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1667252620 source:d:\utn\git juego\juegorpg-c-\juegorpg-c--main\protecyofinal\librerianueva.c
+	"libreriaNueva.h"
+	"Jugador.h"
+	"objeto.h"
+
+1667250099 d:\utn\git juego\juegorpg-c-\juegorpg-c--main\protecyofinal\librerianueva.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	"Codito2.h"
+	"Jugador.h"
+
+1667250761 source:d:\utn\git juego\juegorpg-c-\juegorpg-c--main\protecyofinal\inventario.c
+	"Inventario.h"
+
+1667245102 d:\utn\git juego\juegorpg-c-\juegorpg-c--main\protecyofinal\inventario.h
+	"Codito2.h"
+
+1667249573 source:d:\utn\git juego\juegorpg-c-\juegorpg-c--main\protecyofinal\jugador.c
+	"Jugador.h"
+	"libreriaNueva.h"
+
+1667249542 d:\utn\git juego\juegorpg-c-\juegorpg-c--main\protecyofinal\jugador.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"Inventario.h"
+
+1667250585 source:d:\utn\git juego\juegorpg-c-\juegorpg-c--main\protecyofinal\objeto.c
+	"Objeto.h"
+
+1667252649 source:d:\utn\git juego\juegorpg-c-\juegorpg-c--main\protecyofinal\main.c
+	<stdio.h>
+	<stdlib.h>
+	"libreriaNueva.h"
+	"mapa.h"
+	<time.h>
+	"Jugador.h"
+
+1667252619 source:d:\utn\git juego\juegorpg-c-\juegorpg-c--main\protecyofinal\mapa.c
+	"mapa.h"
+
+1667250882 d:\utn\git juego\juegorpg-c-\juegorpg-c--main\protecyofinal\mapa.h
+	<stdio.h>
+	<stdlib.h>
+	"Jugador.h"
+	"libreriaNueva.h"
+
+1667239892 source:c:\users\usuario\downloads\juegorpg-c--main\juegorpg-c--main\protecyofinal\codito2.c
+	"Codito2.h"
+
+1667239892 c:\users\usuario\downloads\juegorpg-c--main\juegorpg-c--main\protecyofinal\codito2.h
+	"Objeto.h"
+
+1667314914 c:\users\usuario\downloads\juegorpg-c--main\juegorpg-c--main\protecyofinal\objeto.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1667239892 source:c:\users\usuario\downloads\juegorpg-c--main\juegorpg-c--main\protecyofinal\inventario.c
+	"Inventario.h"
+
+1667239892 c:\users\usuario\downloads\juegorpg-c--main\juegorpg-c--main\protecyofinal\inventario.h
+	"Codito2.h"
+
+1667239892 source:c:\users\usuario\downloads\juegorpg-c--main\juegorpg-c--main\protecyofinal\jugador.c
+	"Jugador.h"
+	"libreriaNueva.h"
+
+1667317074 c:\users\usuario\downloads\juegorpg-c--main\juegorpg-c--main\protecyofinal\jugador.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"Inventario.h"
+
+1667315344 c:\users\usuario\downloads\juegorpg-c--main\juegorpg-c--main\protecyofinal\librerianueva.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	"Codito2.h"
+	"Jugador.h"
+
+1667315344 source:c:\users\usuario\downloads\juegorpg-c--main\juegorpg-c--main\protecyofinal\librerianueva.c
+	"libreriaNueva.h"
+	"Jugador.h"
+	"objeto.h"
+
+1667239892 source:c:\users\usuario\downloads\juegorpg-c--main\juegorpg-c--main\protecyofinal\mapa.c
+	"mapa.h"
+
+1667315344 c:\users\usuario\downloads\juegorpg-c--main\juegorpg-c--main\protecyofinal\mapa.h
+	<stdio.h>
+	<stdlib.h>
+	"Jugador.h"
+	"libreriaNueva.h"
+
+1667239892 source:c:\users\usuario\downloads\juegorpg-c--main\juegorpg-c--main\protecyofinal\objeto.c
+	"Objeto.h"
+
+1667314914 source:c:\users\usuario\downloads\juegorpg-c--main\juegorpg-c--main\protecyofinal\main.c
+	<stdio.h>
+	<stdlib.h>
+	"libreriaNueva.h"
+	"mapa.h"
+	<time.h>
+	"Jugador.h"
+
