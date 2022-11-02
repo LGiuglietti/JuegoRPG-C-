@@ -4,6 +4,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Inventario.h"
+#include <time.h>
+#include "Mobs.h"
+#include <windows.h>
 
 typedef struct Heroe
 {
@@ -19,4 +22,6 @@ typedef struct Heroe
 
 void cargaUsuario(Heroe* jug);
 void combate(Heroe* jug);
+nododoble* recogerLootCofre(Heroe* jugador, nododoble* lista);
+
 #endif // JUGADOR_H_INCLUDED
