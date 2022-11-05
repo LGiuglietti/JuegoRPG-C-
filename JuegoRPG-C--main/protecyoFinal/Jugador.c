@@ -1,8 +1,9 @@
 #include "Jugador.h"
-#include "libreriaNueva.h"
-void cargaUsuario(Heroe *jug)
+
+
+void cargaUsuario(Heroe* jug)
 {
-    printf("ingrese el nombre de su heroe:\t");
+    printf("Ingrese el nombre de su heroe: ");
     fflush(stdin);
     gets(jug->nombre);
     jug->armadura=0;
@@ -11,11 +12,12 @@ void cargaUsuario(Heroe *jug)
     jug->vidaActual=10;
     jug->habitacionActual=4;
 }
-void combate(Heroe*jug)
+
+void combate(Heroe* jug)
 {
     FILE *archi=fopen("mobs.bin","rb");
-    mob aux;
-    fread(&aux,sizeof(mob),1,archi);
+    Mob aux;
+    fread(&aux,sizeof(Mob),1,archi);
     fclose(archi);
     puts(aux.prefacio);
     int variableSwitch=0, variableAtaque, danioAtaque, intentoEscape;
@@ -57,9 +59,10 @@ void combate(Heroe*jug)
             break;
         case 3:
             intentoEscape=rand()%2+1;
-            if(intentoEscape==1){
-            //funcion retroceder;
-            aux.vida=0; //para cortar el bucle, la vida del enemigo se resetea en caso de huir
+            if(intentoEscape==1)
+            {
+                //funcion retroceder;
+                aux.vida=0; //para cortar el bucle, la vida del enemigo se resetea en caso de huir
             }
             else
             {
@@ -75,4 +78,88 @@ void combate(Heroe*jug)
         jug->vidaActual+=2;  //se cura en 2
         //actualizacion de estado de habitacion de 0 a 1 y actualizacion de ubicacion de jugador
     }
+}
+
+nododoble* recogerLootCofre(Heroe* jugador, nododoble* lista)
+{
+    srand(time(NULL));
+
+    printf("En frente de nuestro heroe se encuentra un cofre, con mucho cuidado va a abrirlo y en el. \n");
+    Sleep(3);
+    printf(".");
+    Sleep(3);
+    printf(".");
+    Sleep(3);
+    printf(".\n");
+    Sleep(3);
+
+    int cantEspaciosUsados=contarItemsInventario(lista);
+
+    if(cantEspaciosUsados<10)
+    {
+        printf("Encuentra una pocion y un pergamino!!");
+
+        if(cantEspaciosUsados==9)
+        {
+            printf("Tu inventario tiene espacio solo para un objeto mas!\n");
+
+            int decisionCofre=0;
+            printf("desea tomar la pocion o el pergamino?\n");
+            printf("1. pocion\t2. pergamino\n");
+            fflush(stdin);
+            scanf("%i",&decisionCofre);
+
+            if(decisionCofre==1)
+            {
+                Objeto poti=dropoti();
+                nododoble* aux=crearnodo(poti);
+                lista=agregarfinal2(lista,aux);
+            }
+            else
+            {
+                int aleer=rand()%10;///Da el numero que llegara por parametro para el fseek
+                Objeto pergamino=pergamino=depersistirpergamino(aleer);
+                nododoble* aux=crearnodo(pergamino);
+                lista=agregarfinal2(lista,aux);
+
+            }
+        }
+        else
+        {
+            Objeto poti=dropoti();
+            nododoble* aux=crearnodo(poti);
+            lista=agregarfinal2(lista,aux);
+
+            int aleer=rand()%10;
+            Objeto pergamino=depersistirpergamino(aleer);
+            aux=crearnodo(pergamino);
+            lista=agregarfinal2(lista,aux);
+        }
+    }
+
+    int var=rand()%2;
+    if(var==0)
+    {
+        Objeto arma=depersistirarma(jugador->atk);
+        printf("Encontraste %s \n",arma.nombre);
+        printf("%s \n",arma.prefacio);
+        printf("Ataque del arma: %i \n",arma.modificador);
+        Sleep(15);
+        system("cls");
+
+        jugador->atk=arma.modificador;
+    }
+    else
+    {
+        Objeto armadura=depersistirarmadura(jugador->armadura);
+        printf("Encontraste %s \n",armadura.nombre);
+        printf("%s \n",armadura.prefacio);
+        printf("Defensa de la armadura: %i \n",armadura.modificador);
+        Sleep(15);
+        system("cls");
+
+        jugador->armadura=armadura.modificador;
+    }
+
+    return lista;
 }

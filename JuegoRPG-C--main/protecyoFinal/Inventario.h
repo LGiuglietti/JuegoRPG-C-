@@ -10,5 +10,4 @@ nododoble* usarobjeto(nododoble* inventario,Objeto elobjeto); ///Utiliza un oobj
 nododoble* agregarobjeto(nododoble* inventario,int tipo,int* ultimo); ///Agrega un objeto al inventario
 void verinventario(nododoble* inventario); ///Visuliaza los objetos en el inventario
 
-
 #endif // INVENTARIO_H_INCLUDED

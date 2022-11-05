@@ -4,8 +4,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Inventario.h"
+#include <time.h>
+#include "Mobs.h"
+#include <windows.h>
 
-typedef struct heroe
+typedef struct Heroe
 {
     char nombre[30];
     int vidaMax;
@@ -17,6 +20,8 @@ typedef struct heroe
     nododoble* inventarioheroe;
 }Heroe;
 
-void cargaUsuario(Heroe *jug);
-void combate(Heroe*jug);
+void cargaUsuario(Heroe* jug);
+void combate(Heroe* jug);
+nododoble* recogerLootCofre(Heroe* jugador, nododoble* lista);
+
 #endif // JUGADOR_H_INCLUDED

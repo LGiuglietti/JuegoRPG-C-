@@ -43,14 +43,14 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Jugador.h" />
+		<Unit filename="Mobs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Mobs.h" />
 		<Unit filename="Objeto.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Objeto.h" />
-		<Unit filename="libreriaNueva.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="libreriaNueva.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

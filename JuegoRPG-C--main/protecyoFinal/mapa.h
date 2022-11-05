@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include "Jugador.h"
 #include "libreriaNueva.h"
+
 typedef struct nodoArbol
 {
     int id; ///del 1 al 7, inicia en 4
