@@ -18,12 +18,15 @@ typedef struct Mob
 
 typedef struct Boss
 {
-    int relleno;
+    struct Mob theboss;
+    struct fila* primero;
+    struct fila* ultimo;
 }Boss;
 
 ///Mob
+void cargararchimobs();///Inicializa el archivo con los mobs
 Mob crearmob(int tipo);///Trae por referencia que tipo de mob se desea crear
-void persistenciamobs(Mob Elmob);
+void persistenciamobs(Mob Elmob[]);
 Mob depersistenciamob(int ultimo);///Toma en cuenta la cant de combates del pj, para aumentar gradualmente la dificultad
 
 ///Boss

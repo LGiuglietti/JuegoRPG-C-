@@ -24,4 +24,44 @@ Mob crearmob(int tipo)
     return nuevomob;
 }
 
+void persistenciamobs(Mob losmobs[])
+{
+    FILE* fp=fopen(MOBS,"ab");
+
+    if(fp!=NULL)
+    {
+        fwrite(losmobs,sizeof(Mob),1,fp);
+
+        fclose(fp);
+    }
+}
+
+void cargararchimobs()
+{
+    Mob arreglo[6];
+
+    for(int i=0;i<6;i++)
+    {
+        arreglo[i]=crearmob(i);
+    }
+    persistenciamobs(arreglo);
+}
+
+Mob depersistenciamob(int ultimo)
+{
+    Mob nuevo;
+
+    FILE* fp=fopen(MOBS,"rb");
+
+    if(fp!=NULL)
+    {
+        fseek(fp,ultimo*sizeof(Mob),SEEK_SET);
+        fread(&nuevo,sizeof(Mob),1,fp);
+
+        fclose(fp);
+    }
+
+    return nuevo;
+}
+
 ///Boss

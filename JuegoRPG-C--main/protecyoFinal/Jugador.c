@@ -15,11 +15,9 @@ void cargaUsuario(Heroe* jug)
 
 void combate(Heroe* jug)
 {
-    FILE *archi=fopen("mobs.bin","rb");
-    Mob aux;
-    fread(&aux,sizeof(Mob),1,archi);
-    fclose(archi);
-    puts(aux.prefacio);
+    Mob aux=depersistenciamob(jug->cantidadCombates);
+    printf("a");
+
     int variableSwitch=0, variableAtaque, danioAtaque, intentoEscape;
     while(jug->vidaActual!=0 && aux.vida!=0)
     {
