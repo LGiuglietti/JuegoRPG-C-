@@ -18,7 +18,9 @@ typedef struct Mob
 
 typedef struct Boss
 {
-    int relleno;
+    struct Mob theboss;
+    struct fila* primero;
+    struct fila* ultimo;
 }Boss;
 
 ///Mob
