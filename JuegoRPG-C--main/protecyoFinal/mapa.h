@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Jugador.h"
-#include "libreriaNueva.h"
 
 typedef struct nodoArbol
 {

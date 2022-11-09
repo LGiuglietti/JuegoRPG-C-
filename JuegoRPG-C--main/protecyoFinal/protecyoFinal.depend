@@ -373,16 +373,15 @@
 	"Codito2.h"
 	"Jugador.h"
 
-1667935928 c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\juegorpg-c--main\protecyofinal\mapa.h
+1668021063 c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\juegorpg-c--main\protecyofinal\mapa.h
 	<stdio.h>
 	<stdlib.h>
 	"Jugador.h"
-	"libreriaNueva.h"
 
 1668019479 source:c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\juegorpg-c--main\protecyofinal\mapa.c
 	"mapa.h"
 
-1668018983 source:c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\juegorpg-c--main\protecyofinal\objeto.c
+1668020741 source:c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\juegorpg-c--main\protecyofinal\objeto.c
 	"Objeto.h"
 
 1667935928 source:c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\juegorpg-c--main\protecyofinal\filas.c
