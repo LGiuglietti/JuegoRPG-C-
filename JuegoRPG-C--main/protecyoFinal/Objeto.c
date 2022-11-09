@@ -57,6 +57,18 @@ Objeto dropoti()
     return poti;
 }
 
+Objeto dropperga()
+{
+    srand(time(NULL));
+
+    Objeto pergamino;
+    int aleer=rand()%PERGASENARCHI;
+
+    pergamino=depersistirpergamino(aleer);
+
+    return pergamino;
+}
+
 Objeto depersistirpergamino(int ultimo)
 {
     Objeto drop;

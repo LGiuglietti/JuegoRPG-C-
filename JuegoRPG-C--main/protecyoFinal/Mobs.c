@@ -64,4 +64,16 @@ Mob depersistenciamob(int ultimo)
     return nuevo;
 }
 
+Mob mobatacado(Mob elmob,int danio)
+{
+    elmob.vida-=danio;
+
+    if(elmob.vida==0)
+    {
+        elmob.estado=0;
+    }
+
+    return elmob;
+}
+
 ///Boss

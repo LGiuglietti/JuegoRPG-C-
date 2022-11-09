@@ -106,7 +106,7 @@ nodoArbol*cargaMapa(nodoArbol*arbol)
     arbol=insertar(arbol,7);
     return arbol;
 }
-void avanzarIzquierda(nodoArbol*mapa, int habitacionActual, Heroe*jugador)
+void avanzarIzquierda(nodoArbol* mapa, int habitacionActual, Heroe* jugador)
 {
     if(habitacionActual==mapa->id)
     {
@@ -138,7 +138,7 @@ void avanzarIzquierda(nodoArbol*mapa, int habitacionActual, Heroe*jugador)
                 }
                 else
                 {
-                    jugador->inventarioheroe=recogerLootCofre(jugador,jugador->inventarioheroe);
+                    (*jugador)=recogerLootCofre((*jugador));
                 }
             }
 
@@ -189,7 +189,7 @@ void avanzarDerecha(nodoArbol*mapa, int habitacionActual, Heroe*jugador)
                 }
                 else
                 {
-                    jugador->inventarioheroe=recogerLootCofre(jugador,jugador->inventarioheroe);
+                    (*jugador)=recogerLootCofre((*jugador));
                 }
             }
 

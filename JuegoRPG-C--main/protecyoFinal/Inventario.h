@@ -7,7 +7,8 @@
 
 nododoble* inicinventario(); ///Inicializa la lista de invnetario
 nododoble* usarobjeto(nododoble* inventario,Objeto elobjeto); ///Utiliza un oobjeto del inventario
-nododoble* agregarobjeto(nododoble* inventario,int tipo,int* ultimo); ///Agrega un objeto al inventario
+nododoble* agregarobjeto(nododoble* inventario,Objeto elobjeto); ///Agrega un objeto al inventario
 void verinventario(nododoble* inventario); ///Visuliaza los objetos en el inventario
+Objeto buscarobjeto(nododoble* inventario,int posicion);///Busca por posicion un objeto en el nodo
 
 #endif // INVENTARIO_H_INCLUDED

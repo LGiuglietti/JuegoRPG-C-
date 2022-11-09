@@ -328,30 +328,31 @@
 1667518805 c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\juegorpg-c--main\protecyofinal\codito2.h
 	"Objeto.h"
 
-1667935928 c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\juegorpg-c--main\protecyofinal\objeto.h
+1668020741 c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\juegorpg-c--main\protecyofinal\objeto.h
 	<string.h>
 	<stdio.h>
 	<stdlib.h>
+	<time.h>
 
-1667518805 source:c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\juegorpg-c--main\protecyofinal\inventario.c
+1668018494 source:c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\juegorpg-c--main\protecyofinal\inventario.c
 	"Inventario.h"
 
-1667935928 c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\juegorpg-c--main\protecyofinal\inventario.h
+1668018026 c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\juegorpg-c--main\protecyofinal\inventario.h
 	"Codito2.h"
 
-1667937068 source:c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\juegorpg-c--main\protecyofinal\jugador.c
+1668020531 source:c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\juegorpg-c--main\protecyofinal\jugador.c
 	"Jugador.h"
 
-1667935928 c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\juegorpg-c--main\protecyofinal\jugador.h
+1668020273 c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\juegorpg-c--main\protecyofinal\jugador.h
 	<string.h>
 	<stdio.h>
 	<stdlib.h>
-	"Inventario.h"
 	<time.h>
-	"Mobs.h"
 	<windows.h>
+	"Inventario.h"
+	"Mobs.h"
 
-1667936816 c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\juegorpg-c--main\protecyofinal\mobs.h
+1668014979 c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\juegorpg-c--main\protecyofinal\mobs.h
 	<string.h>
 	<stdio.h>
 	<stdlib.h>
@@ -378,10 +379,10 @@
 	"Jugador.h"
 	"libreriaNueva.h"
 
-1667518805 source:c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\juegorpg-c--main\protecyofinal\mapa.c
+1668019479 source:c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\juegorpg-c--main\protecyofinal\mapa.c
 	"mapa.h"
 
-1667935928 source:c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\juegorpg-c--main\protecyofinal\objeto.c
+1668018983 source:c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\juegorpg-c--main\protecyofinal\objeto.c
 	"Objeto.h"
 
 1667935928 source:c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\juegorpg-c--main\protecyofinal\filas.c
@@ -390,6 +391,6 @@
 1667935928 c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\juegorpg-c--main\protecyofinal\filas.h
 	"Codito2.h"
 
-1667936950 source:c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\juegorpg-c--main\protecyofinal\mobs.c
+1668014979 source:c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\juegorpg-c--main\protecyofinal\mobs.c
 	"Mobs.h"
 
