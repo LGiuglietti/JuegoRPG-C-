@@ -207,7 +207,48 @@ void avanzarDerecha(nodoArbol*mapa, int habitacionActual, Heroe*jugador)
         }
     }
 }
+void retroceso(Heroe*jug,nodoArbol*mapa)
+{
+    nodoArbol*aux=mapa;
+    if(jug->habitacionActual==1 || jug->habitacionActual==3)
+    {
+        jug->habitacionActual=2;
+        aux=buscarYmostrarRestrocediendo(mapa,jug->habitacionActual);
+    }
+    else if(jug->habitacionActual==5 || jug->habitacionActual==7)
+    {
+        jug->habitacionActual=6;
+        aux=buscarYmostrarRestrocediendo(mapa,jug->habitacionActual);
+    }
+    else
+    {
+        jug->habitacionActual=4;
+        aux=buscarYmostrarRestrocediendo(mapa,jug->habitacionActual);
+    }
 
+    if(aux->estado==1)
+    {
+        if(aux->encuentro==1)
+        {
+            printf("el cadaver de tu enemigo yace en el suelo");
+            Sleep(2300);
+            system("cls");
+        }
+        else
+        {
+            printf("el cofre abierto yace en la habitacion");
+            Sleep(2300);
+            system("cls");
+        }
+    }
+    else
+    {
+        if(aux->encuentro==1)
+        {
+            combate(jug);
+        }
+    }
+}
 
 
 
