@@ -1,27 +1,20 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "mapa.h"
-#include <time.h>
-#include "Jugador.h"
 #include "Salas.h"
-#define VIDAS 3
-#include "Inventario.h"
+
+void inicladungeon(Dungeon* ladungeon)
+{
+    ladungeon->raiz=inicArbol();
+    ladungeon->raiz=cargaMapa(ladungeon->raiz);
+}
 /*
-int main()
+int funcion()
 {
     /// inicio del setup
 
     srand(time(NULL)); ///Declara el seed para el rand
+
     Heroe jugador;
     cargaUsuario(&jugador);
     jugador.inventarioheroe=inicinventario();
-    Dungeon ladungeon[VIDAS];///Vidas del juego
-
-    for(int i=0;i<VIDAS;i++)
-    {
-        inicdungeon(&ladungeon[i]);
-        ladungeon[i].nrotry=i+1;
-    }
 
     ///fin del setup
 
@@ -96,37 +89,7 @@ MENU:
         }
 
     }//fin del bucle
+
     return 0;
 }
 */
-
-int main()
-{
-    nododoble* lista=iniclista();
-
-    Objeto objeto1=crearobjeto();
-    nododoble* nodo1=crearnodo(objeto1);
-    lista=agregarfinal2(lista,nodo1);
-
-    Objeto objeto2=crearobjeto();
-    nododoble* nodo2=crearnodo(objeto2);
-    lista=agregarfinal2(lista,nodo2);
-
-    Objeto objeto3=crearobjeto();
-    nododoble* nodo3=crearnodo(objeto3);
-    lista=agregarfinal2(lista,nodo3);
-
-    printf("ANTES\n");
-    mostrarlista(lista);
-
-
-   borrarnodo(&lista,objeto3.nombre);
-
-    printf("DESPUES\n");
-    mostrarlista(lista);
-
-
-    return 0;
-}
-
-

@@ -10,6 +10,5 @@ nododoble* usarobjeto(nododoble* inventario,Objeto elobjeto); ///Utiliza un obje
 nododoble* agregarobjeto(nododoble* inventario,Objeto elobjeto); ///Agrega un objeto al inventario
 void verinventario(nododoble* inventario); ///Visuliaza los objetos en el inventario
 Objeto buscarobjeto(nododoble* inventario,int posicion);///Busca por posicion un objeto en el nodo
-void efectoObjetoEnCombate(nododoble*dato,Heroe*jug,Mob*mob);//realiza los efectos del  objeto en combate
 
 #endif // INVENTARIO_H_INCLUDED

@@ -84,28 +84,42 @@ nododoble* buscar(nododoble* lista,char dato[])
     return abuscar;
 }
 
-nododoble* borrarnodo(nododoble* lista,char dato[])
+void borrarnodo(nododoble** lista,char dato[])
 {
-    if(lista!=NULL)
+    if((*lista)!=NULL)
     {
-        nododoble* aborrar=buscar(lista,dato);
+        nododoble* aborrar=buscar((*lista),dato);
 
-        if(aborrar!=NULL)
+        if(strcmpi(aborrar->dato.nombre,(*lista)->dato.nombre)==0)
         {
-            nododoble* auxante=aborrar->ante;
-            nododoble* auxsig=aborrar->sig;
-
-            auxante->sig=auxsig;
-            auxsig->ante=auxante;
+            aborrar=(*lista);
+           (*lista)=(*lista)->sig;
+            (*lista)->ante=NULL;
             free(aborrar);
         }
         else
         {
-            printf("NO HAY OBJETOS");
+            aborrar=buscar((*lista),dato);
+            if(strcmpi(aborrar->dato.nombre,dato)==0)
+            {
+                aborrar->ante->sig= aborrar->sig;
+
+                if(aborrar->sig!=NULL)
+                {
+                    aborrar->sig->ante=aborrar->ante;
+                }else{
+                    aborrar->ante = NULL;
+                }
+
+                free(aborrar);
+            }
         }
     }
+    else
+    {
+        printf("No");
+    }
 
-    return lista;
 }
 
 void mostrarlista(nododoble* lista)

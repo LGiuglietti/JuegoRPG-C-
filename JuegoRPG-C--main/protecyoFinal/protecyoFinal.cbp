@@ -55,6 +55,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Objeto.h" />
+		<Unit filename="Salas.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Salas.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -62,6 +66,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="mapa.h" />
-		<Extensions />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

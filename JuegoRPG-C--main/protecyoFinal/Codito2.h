@@ -14,7 +14,7 @@ nododoble* crearnodo(Objeto elobjetito);
 nododoble* agregarfinal2(nododoble* lista, nododoble* nuevo);
 nododoble* buscarultimo(nododoble* lista);
 int contarItemsInventario(nododoble* lista);
-nododoble* borrarnodo(nododoble* lista,char dato[]);
+void borrarnodo(nododoble** lista,char dato[]);
 void mostrarlista(nododoble* lista);
 nododoble* buscar(nododoble* lista,char dato[]);
 

@@ -122,7 +122,7 @@ int combate(Heroe* jug)
             heroeaux=ataque(heroeaux,&aux);
             break;
         case 2:
-            heroeaux=utilizarobjeto(heroeaux);
+            heroeaux=utilizarobjetoencombate(heroeaux);
             break;
         case 3:
             seescapo=intentoescape(seescapo,&aux);
@@ -188,7 +188,7 @@ Heroe recibedanio(Heroe jugador,int danio)
     return jugador;
 }
 
-Heroe utilizarobjeto(Heroe jugador)
+Heroe utilizarobjetoencombate(Heroe jugador)
 {
     printf("En medio del combate, abres tu bolsa con esperanza de encontrar algo que te ayude en este combate");
     printf("Que desea utilizar");
@@ -212,7 +212,7 @@ Heroe utilizarobjeto(Heroe jugador)
 
     if(elobjeto.tipo!=0)
     {
-        usarobjeto(jugador.inventarioheroe,elobjeto);
+        jugador.inventarioheroe=usarobjeto(jugador.inventarioheroe,elobjeto);
     }
     else
     {
@@ -220,6 +220,32 @@ Heroe utilizarobjeto(Heroe jugador)
     }
 
     return jugador;
+}
+
+void efectoObjetoEnCombate(nododoble*dato,Heroe*jug,Mob*mob)
+{
+    if(dato->dato.tipo==2) //el item es pocion
+    {
+        jug->vidaActual=jug->vidaActual+5;
+        if(jug->vidaActual>jug->vidaMax)
+        {
+            jug->vidaActual=jug->vidaMax;
+            printf("te curas todos tus puntos de golpe");
+        }
+        else
+        {
+            printf("te curas 5 puntos de golpe");
+        }
+        Sleep(2000);
+        system("cls");
+    }
+    else
+    {
+        printf("utilizando tu pergamino de %s atacas al %s",dato->dato.nombre, mob->nombre);
+        mob->vida=(mob->vida)-(dato->dato.modificador);
+        Sleep(2300);
+        system("cls");
+    }
 }
 
 int intentoescape(int seescapo,Mob* elmob)

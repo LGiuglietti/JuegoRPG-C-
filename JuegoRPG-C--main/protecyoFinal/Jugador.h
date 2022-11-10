@@ -27,7 +27,8 @@ Heroe armaduraoarma(Heroe jugador);
 int combate(Heroe* jug);
 Heroe ataque(Heroe jug,Mob* elmob);
 Heroe recibedanio(Heroe jugador,int danio);
-Heroe utilizarobjeto(Heroe jugador);
+Heroe utilizarobjetoencombate(Heroe jugador);
+void efectoObjetoEnCombate(nododoble* dato,Heroe* jug,Mob* mob);//realiza los efectos del  objeto en combate
 int intentoescape(int seescapo,Mob* elmob);
 
 #endif // JUGADOR_H_INCLUDED

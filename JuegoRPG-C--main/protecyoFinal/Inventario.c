@@ -11,7 +11,7 @@ nododoble* usarobjeto(nododoble* inventario,Objeto elobjeto)
 {
     if(inventario!=NULL)
     {
-        borrarnodo(inventario,elobjeto.nombre);
+        borrarnodo(&inventario,elobjeto.nombre);
     }
     else
     {
@@ -89,30 +89,4 @@ Objeto buscarobjeto(nododoble* inventario,int posicion)
     }
 
     return abuscar;
-}
-
-void efectoObjetoEnCombate(nododoble*dato,Heroe*jug,Mob*mob)
-{
-    if(dato->dato.tipo==2) //el item es pocion
-    {
-        jug->vidaActual=jug->vidaActual+5;
-        if(jug->vidaActual>jug->vidaMax)
-        {
-            jug->vidaActual=jug->vidaMax;
-            printf("te curas todos tus puntos de golpe");
-        }
-        else
-        {
-            printf("te curas 5 puntos de golpe");
-        }
-        Sleep(2000);
-        system("cls");
-    }
-    else
-    {
-        printf("utilizando tu pergamino de %s atacas al %s",dato->dato.nombre, mob->nombre);
-        mob->vida=mob->vida-dato->dato.modificador;
-        Sleep(2300);
-        system("cls");
-    }
 }

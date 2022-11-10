@@ -393,3 +393,78 @@
 1668014979 source:c:\users\motta\onedrive\documentos\facultad\utn\programacion y laboratorio 2\tpfinal\juegorpg-c--main\protecyofinal\mobs.c
 	"Mobs.h"
 
+1668095418 source:c:\users\usuario\downloads\juegorpg-c--modularizacion3.0\juegorpg-c--main\protecyofinal\codito2.c
+	"Codito2.h"
+
+1668094749 c:\users\usuario\downloads\juegorpg-c--modularizacion3.0\juegorpg-c--main\protecyofinal\codito2.h
+	"Objeto.h"
+
+1668067140 c:\users\usuario\downloads\juegorpg-c--modularizacion3.0\juegorpg-c--main\protecyofinal\objeto.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+
+1668067140 source:c:\users\usuario\downloads\juegorpg-c--modularizacion3.0\juegorpg-c--main\protecyofinal\filas.c
+	"filas.h"
+
+1668067140 c:\users\usuario\downloads\juegorpg-c--modularizacion3.0\juegorpg-c--main\protecyofinal\filas.h
+	"Codito2.h"
+
+1668086081 source:c:\users\usuario\downloads\juegorpg-c--modularizacion3.0\juegorpg-c--main\protecyofinal\mapa.c
+	"mapa.h"
+
+1668086081 c:\users\usuario\downloads\juegorpg-c--modularizacion3.0\juegorpg-c--main\protecyofinal\mapa.h
+	<stdio.h>
+	<stdlib.h>
+	"Jugador.h"
+
+1668087440 c:\users\usuario\downloads\juegorpg-c--modularizacion3.0\juegorpg-c--main\protecyofinal\jugador.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+	"Inventario.h"
+	"Mobs.h"
+
+1668085636 c:\users\usuario\downloads\juegorpg-c--modularizacion3.0\juegorpg-c--main\protecyofinal\inventario.h
+	"Codito2.h"
+
+1668067140 c:\users\usuario\downloads\juegorpg-c--modularizacion3.0\juegorpg-c--main\protecyofinal\mobs.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1668067140 source:c:\users\usuario\downloads\juegorpg-c--modularizacion3.0\juegorpg-c--main\protecyofinal\mobs.c
+	"Mobs.h"
+
+1668067140 source:c:\users\usuario\downloads\juegorpg-c--modularizacion3.0\juegorpg-c--main\protecyofinal\objeto.c
+	"Objeto.h"
+
+1668092838 source:c:\users\usuario\downloads\juegorpg-c--modularizacion3.0\juegorpg-c--main\protecyofinal\inventario.c
+	"Inventario.h"
+
+1668093801 source:c:\users\usuario\downloads\juegorpg-c--modularizacion3.0\juegorpg-c--main\protecyofinal\jugador.c
+	"Jugador.h"
+
+1668095356 source:c:\users\usuario\downloads\juegorpg-c--modularizacion3.0\juegorpg-c--main\protecyofinal\main.c
+	<stdio.h>
+	<stdlib.h>
+	"mapa.h"
+	<time.h>
+	"Jugador.h"
+	"Salas.h"
+	"Inventario.h"
+
+1668092536 c:\users\usuario\downloads\juegorpg-c--modularizacion3.0\juegorpg-c--main\protecyofinal\salas.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"mapa.h"
+	"Jugador.h"
+
+1668092865 source:c:\users\usuario\downloads\juegorpg-c--modularizacion3.0\juegorpg-c--main\protecyofinal\salas.c
+	"Salas.h"
+

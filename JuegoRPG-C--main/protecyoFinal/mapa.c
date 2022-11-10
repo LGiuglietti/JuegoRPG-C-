@@ -207,7 +207,7 @@ void avanzarDerecha(nodoArbol*mapa, int habitacionActual, Heroe*jugador)
         }
     }
 }
-void retroceso(Heroe*jug,nodoArbol*mapa)
+void retroceso(Heroe* jug,nodoArbol* mapa)
 {
     nodoArbol*aux=mapa;
     if(jug->habitacionActual==1 || jug->habitacionActual==3)
@@ -271,5 +271,6 @@ nodoArbol*buscarYmostrarRestrocediendo(nodoArbol*arbol, int dato)
     }
     return arbol;
 }
+
 
 
