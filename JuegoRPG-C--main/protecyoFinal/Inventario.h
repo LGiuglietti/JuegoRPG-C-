@@ -6,9 +6,10 @@
 ///Elegimos utilizar lista para el inventario porque a pesar de saber que van a ser 10, era el mejor lugar para incluir una lista
 
 nododoble* inicinventario(); ///Inicializa la lista de invnetario
-nododoble* usarobjeto(nododoble* inventario,Objeto elobjeto); ///Utiliza un oobjeto del inventario
+nododoble* usarobjeto(nododoble* inventario,Objeto elobjeto); ///Utiliza un objeto del inventario
 nododoble* agregarobjeto(nododoble* inventario,Objeto elobjeto); ///Agrega un objeto al inventario
 void verinventario(nododoble* inventario); ///Visuliaza los objetos en el inventario
 Objeto buscarobjeto(nododoble* inventario,int posicion);///Busca por posicion un objeto en el nodo
+void efectoObjetoEnCombate(nododoble*dato,Heroe*jug,Mob*mob);//realiza los efectos del  objeto en combate
 
 #endif // INVENTARIO_H_INCLUDED
