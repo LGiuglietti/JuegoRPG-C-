@@ -53,7 +53,7 @@ int contarItemsInventario(nododoble* lista)
     int cantEspaciosUsados=0;
     if(lista!=NULL)
     {
-        while(seg->sig!=NULL)
+        while(seg!=NULL)
         {
             cantEspaciosUsados++;
             seg=seg->sig;
@@ -119,7 +119,7 @@ void mostrarlista(nododoble* lista)
         nododoble* seg=lista;
         int i=1;///Contador que funciona solo para enumerar
 
-        while(seg->sig!=NULL)
+        while(seg!=NULL)
         {
             printf("%i. %s",i,seg->dato.nombre);
             i++;
