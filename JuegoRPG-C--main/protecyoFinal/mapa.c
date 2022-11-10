@@ -250,6 +250,26 @@ void retroceso(Heroe*jug,nodoArbol*mapa)
     }
 }
 
-
+nodoArbol*buscarYmostrarRestrocediendo(nodoArbol*arbol, int dato)
+{
+    if(arbol!=NULL)
+    {
+        if(dato==arbol->id)
+        {
+            printf("Nuestro heroe retrocede a la habitacion anterior");
+            Sleep(2300);
+            system("cls");
+        }
+        else if(dato>arbol->id)
+        {
+            arbol->derecha=buscarYmostrarRestrocediendo(arbol->derecha,dato);
+        }
+        else
+        {
+            arbol->izquierda=buscarYmostrarRestrocediendo(arbol->izquierda,dato);
+        }
+    }
+    return arbol;
+}
 
 
