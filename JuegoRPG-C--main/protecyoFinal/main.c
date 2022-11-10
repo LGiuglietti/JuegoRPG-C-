@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "libreriaNueva.h"
 #include "mapa.h"
 #include <time.h>
 #include "Jugador.h"
@@ -12,6 +13,7 @@ int main()
     srand(time(NULL)); ///Declara el seed para el rand
     Heroe jugador;
     cargaUsuario(&jugador);
+    jugador.inventarioheroe=inicinventario();
     nodoArbol*mapa=inicArbol();
     mapa=cargaMapa(mapa);
 
@@ -22,7 +24,7 @@ int main()
 MENU:
     while(fin==0)
     {
-        printf("que desea hacer?\n");
+        printf("\nque desea hacer?\n");
         printf("1: avanzar\t");
         printf("2: retroceder\t");
         printf("3: abrir inventario\t");
@@ -37,19 +39,22 @@ MENU:
         }
         switch(aux)
         {
+        //movimiento izquierda derecha
         case 1:
 
+            printf("desea ir a la izquierda o la derecha?");
+            printf("1: izquierda\t2: derecha");
+            scanf("%d", &aux);
             switch(aux)
             {
-                printf("desea ir a la izquierda o la derecha?");
-                printf("1: izquierda\t2: derecha");
-            case 1:
                 system("cls");
+            case 1:
                 printf("nuestro heroe avanza por la izquierda");
                 Sleep(2300);
                 system("cls");
                 avanzarIzquierda(mapa,jugador.habitacionActual,&jugador);
                 break;
+
             case 2:
                 system("cls");
                 printf("nuestro heroe avanza por la derecha");
@@ -58,8 +63,9 @@ MENU:
                 avanzarDerecha(mapa,jugador.habitacionActual,&jugador);
                 system("cls");
                 break;
-
             }
+            break;
+
         //movimiento izquierda derecha
         case 2:
             if(jugador.habitacionActual==4)
@@ -70,11 +76,11 @@ MENU:
             }
             else
             {
-                //movimientoRetroceso
+                retroceso(&jugador,mapa);
             }
             break;
         case 3:
-
+            mostrarlista(jugador.inventarioheroe);
 
             break;
         case 4:
@@ -86,8 +92,6 @@ MENU:
     }//fin del bucle
     return 0;
 }
-
-
 
 
 
