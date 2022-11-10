@@ -121,13 +121,13 @@ void mostrarlista(nododoble* lista)
 
         while(seg!=NULL)
         {
-            printf("%i. %s",i,seg->dato.nombre);
+            printf("%i. %s  ",i,seg->dato.nombre);
             i++;
             seg=seg->sig;
         }
         while(i<11)
         {
-            printf("%i. ------",i);
+            printf("%i. ------  ",i);
             i++;
         }
     }
