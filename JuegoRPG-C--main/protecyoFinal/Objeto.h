@@ -3,7 +3,10 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+#include <windows.h>
 #define PERGAMINO "pergamino.bin"
+#define PERGASENARCHI 10
 #define ARMA "arma.bin"
 #define ARMADURA "armadura.bin"
 
@@ -17,6 +20,8 @@ typedef struct Objeto
 
 Objeto crearobjeto(); ///Crea un objeto
 Objeto dropoti();
+Objeto dropperga();
+Objeto droparmauarmadura(int ultimo,int tipo);
 void persistenciaobj(Objeto elobjeto); /// Carga a un archivo un objeto
 void persistirpergamino(Objeto elobjeto);
 void persistirarma(Objeto elobjeto);

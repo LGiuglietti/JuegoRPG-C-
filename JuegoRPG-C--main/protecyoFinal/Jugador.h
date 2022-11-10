@@ -3,10 +3,10 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "Inventario.h"
 #include <time.h>
-#include "Mobs.h"
 #include <windows.h>
+#include "Inventario.h"
+#include "Mobs.h"
 
 typedef struct Heroe
 {
@@ -21,7 +21,13 @@ typedef struct Heroe
 }Heroe;
 
 void cargaUsuario(Heroe* jug);
-void combate(Heroe* jug);
-nododoble* recogerLootCofre(Heroe* jugador, nododoble* lista);
+Heroe recogerLootCofre(Heroe jugador);
+Heroe dropsp(Heroe jugador,int designado);
+Heroe armaduraoarma(Heroe jugador);
+int combate(Heroe* jug);
+Heroe ataque(Heroe jug,Mob* elmob);
+Heroe recibedanio(Heroe jugador,int danio);
+Heroe utilizarobjeto(Heroe jugador);
+int intentoescape(int seescapo,Mob* elmob);
 
 #endif // JUGADOR_H_INCLUDED

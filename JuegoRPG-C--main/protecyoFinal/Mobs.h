@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define MOBS "mobs.bin"
+#define CANTMOBS 6
 #define BOSSES "bosses.bin"
 
 typedef struct Mob
@@ -24,9 +25,10 @@ typedef struct Boss
 }Boss;
 
 ///Mob
-Mob crearmob(int tipo);///Trae por referencia que tipo de mob se desea crear
-void persistenciamobs(Mob Elmob);
+void crearmob();///Crea un mob y lo carga a un archivo
+void persistenciamobs(Mob mob);
 Mob depersistenciamob(int ultimo);///Toma en cuenta la cant de combates del pj, para aumentar gradualmente la dificultad
+Mob mobatacado(Mob elmob,int danio);///Mide cuanta vida se le resta a un enemigo cuando es atacado, actualiza su estado en caso que sea necesario
 
 ///Boss
 Boss crearboss();

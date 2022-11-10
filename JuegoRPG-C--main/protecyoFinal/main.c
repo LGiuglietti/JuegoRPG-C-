@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "libreriaNueva.h"
 #include "mapa.h"
 #include <time.h>
 #include "Jugador.h"
@@ -39,7 +38,7 @@ MENU:
         switch(aux)
         {
         case 1:
-            //movimiento izquierda derecha
+
             switch(aux)
             {
                 printf("desea ir a la izquierda o la derecha?");

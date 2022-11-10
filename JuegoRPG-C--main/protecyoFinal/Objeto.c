@@ -57,6 +57,39 @@ Objeto dropoti()
     return poti;
 }
 
+Objeto dropperga()
+{
+    srand(time(NULL));
+
+    Objeto pergamino;
+    int aleer=rand()%PERGASENARCHI;
+
+    pergamino=depersistirpergamino(aleer);
+
+    return pergamino;
+}
+
+Objeto droparmauarmadura(int ultimo,int tipo)
+{
+    Objeto elobjeto;
+
+    if(tipo==3)
+    {
+        elobjeto=depersistirarma(ultimo);
+    }
+    else
+    {
+        elobjeto=depersistirarmadura(ultimo);
+    }
+
+    printf("Encontraste %s \n",elobjeto.nombre);
+    printf("%s \n",elobjeto.prefacio);
+    Sleep(15);
+    system("cls");
+
+    return elobjeto;
+}
+
 Objeto depersistirpergamino(int ultimo)
 {
     Objeto drop;
