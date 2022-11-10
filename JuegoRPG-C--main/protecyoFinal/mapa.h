@@ -28,6 +28,7 @@ int esHoja (nodoArbol* nodo);
 nodoArbol*cargaMapa(nodoArbol*arbol);
 void avanzarIzquierda(nodoArbol*mapa, int habitacionActual, Heroe*jugador);
 void avanzarDerecha(nodoArbol*mapa, int habitacionActual, Heroe*jugador);
+void retroceso(Heroe*jug,nodoArbol*mapa);
 // fin prototipado manejo de mapa
 
 #endif // ARBOL_H_INCLUDED
