@@ -1,50 +1,48 @@
 #include "Mobs.h"
 
 ///Mobs
-Mob crearmob(int tipo)
+void crearmob()
 {
-    char nombremobs[CANTMOBS][20]={"No Muerto","Boomer","Hunter","A","B","C"};
-    char prefacion[CANTMOBS][20]={"El No Muerto","Boomer","E","A","B","C"};
-    int daniomobs[CANTMOBS]={1,2,3,4,5,6};
-    int defensamobs[CANTMOBS]={0,2,3,4,5,6};
-    int vidamobs[CANTMOBS]={1,2,3,4,5,6};
-
     Mob nuevomob;
 
-    if((tipo>=0)&&(tipo<CANTMOBS))
+    for(int i=0;i<CANTMOBS;i++)
     {
-        nuevomob.defensa=defensamobs[tipo];
-        nuevomob.danio=daniomobs[tipo];
-        nuevomob.vida=vidamobs[tipo];
-        nuevomob.estado=1;
-        strcpy(nuevomob.nombre,nombremobs[tipo]);
-        strcpy(nuevomob.prefacio,prefacion[tipo]);
-    }
+        printf("Ingrese el nombre del Mob a crear: ");
+        fflush(stdin);
+        gets(nuevomob.nombre);
 
-    return nuevomob;
+        printf("De una breve descripcion de su Mob (Prefacio): ");
+        fflush(stdin);
+        gets(nuevomob.prefacio);
+
+        printf("Ingrese la defensa del Mob a crear: ");
+        fflush(stdin);
+        scanf("%i",&nuevomob.defensa);
+
+        printf("Ingrese el danio del Mob a crear: ");
+        fflush(stdin);
+        scanf("%i",&nuevomob.danio);
+
+        printf("Ingrese la vida del Mob a crear: ");
+        fflush(stdin);
+        scanf("%i",&nuevomob.vida);
+
+        nuevomob.estado=1;
+
+        persistenciamobs(nuevomob);
+    }
 }
 
-void persistenciamobs(Mob losmobs[])
+void persistenciamobs(Mob mob)
 {
     FILE* fp=fopen(MOBS,"ab");
 
     if(fp!=NULL)
     {
-        fwrite(losmobs,sizeof(Mob),1,fp);
+        fwrite(&mob,sizeof(Mob),1,fp);
 
         fclose(fp);
     }
-}
-
-void cargararchimobs()
-{
-    Mob arreglo[CANTMOBS];
-
-    for(int i=0;i<6;i++)
-    {
-        arreglo[i]=crearmob(i);
-    }
-    persistenciamobs(arreglo);
 }
 
 Mob depersistenciamob(int ultimo)

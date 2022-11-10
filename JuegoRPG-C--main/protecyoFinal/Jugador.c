@@ -79,24 +79,15 @@ Heroe armaduraoarma(Heroe jugador)
 
     if(var==0)
     {
-        Objeto arma=depersistirarma(jugador.atk);
-        printf("Encontraste %s \n",arma.nombre);
-        printf("%s \n",arma.prefacio);
+        Objeto arma=droparmauarmadura(jugador.atk,3);
         printf("Ataque del arma: %i \n",arma.modificador);
-        Sleep(15);
-        system("cls");
-
         jugador.atk=arma.modificador;
     }
     else
     {
-        Objeto armadura=depersistirarmadura(jugador.armadura);
-        printf("Encontraste %s \n",armadura.nombre);
-        printf("%s \n",armadura.prefacio);
-        printf("Defensa de la armadura: %i \n",armadura.modificador);
-        Sleep(15);
-        system("cls");
 
+        Objeto armadura=droparmauarmadura(jugador.armadura,4);
+        printf("Defensa de la armadura: %i \n",armadura.modificador);
         jugador.armadura=armadura.modificador;
     }
 
