@@ -16,13 +16,13 @@ Heroe recogerLootCofre(Heroe jugador)
 {
     srand(time(NULL));
 
-    printf("En frente de nuestro heroe se encuentra un cofre, con mucho cuidado va a abrirlo y en el. \n");
+    printf("En frente de nuestro heroe se encuentra un cofre, con mucho cuidado va a abrirlo y en el.");
     Sleep(1000);
     printf(".");
     Sleep(1000);
     printf(".");
     Sleep(1000);
-    printf(".\n");
+    printf("\n");
 
     int cantEspaciosUsados=contarItemsInventario(jugador.inventarioheroe);
 

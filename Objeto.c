@@ -90,7 +90,7 @@ Objeto droparmauarmadura(int ultimo,int tipo)
     return elobjeto;
 }
 
-Objeto depersistirpergamino(int ultimo)
+Objeto depersistirpergamino()
 {
     Objeto drop;
 
@@ -98,7 +98,7 @@ Objeto depersistirpergamino(int ultimo)
 
     if(fp!=NULL)
     {
-        fseek(fp,ultimo*sizeof(Objeto),SEEK_SET);
+        fseek(fp,sizeof(Objeto),SEEK_SET);
         fread(&drop,sizeof(Objeto),1,fp);
 
         fclose(fp);
