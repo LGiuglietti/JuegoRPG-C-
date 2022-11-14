@@ -97,7 +97,13 @@ Heroe armaduraoarma(Heroe jugador)
 
 int combate(Heroe* jug)
 {
-    Mob aux=depersistenciamob(jug->cantidadCombates);
+    float nivelJugador=jug->cantidadCombates;
+    float statsJugador=0;
+    statsJugador=((jug->atk+jug->armadura)/2);
+    nivelJugador=nivelJugador+statsJugador;
+    int nivelJugadorEntero=0;
+    nivelJugadorEntero=nivelJugador;
+    Mob aux=depersistenciamob(nivelJugadorEntero);
     int seescapo=0;///Si escapa se cambiaria a 1 este valor y si no queda igual
     Heroe heroeaux=(*jug);
 
