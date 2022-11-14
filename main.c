@@ -15,7 +15,7 @@ int main()
     jugador.inventarioheroe=inicinventario();
     nodoArbol*mapa=inicArbol();
     mapa=cargaMapa(mapa);
-
+    char decisionSalir='n';
     ///fin del setup
 
     int fin=0; //0=no se completo mazmorra, 1=se completo mazmorra
@@ -23,11 +23,12 @@ int main()
 MENU:
     while(fin==0)
     {
+        printf("VIDA: %d/%d\n\n\n\n",jugador.vidaActual,jugador.vidaMax);
         printf("\nque desea hacer?\n");
         printf("1: avanzar\t");
         printf("2: retroceder\t");
         printf("3: abrir inventario\t");
-        printf("4: guardar y salir\t");
+        printf("4: salir\t");
         scanf("%d", &aux);
         if(aux>4)
         {
@@ -84,7 +85,15 @@ MENU:
             system("cls");
             break;
         case 4:
-            //guarda lista de arboles el estado actual del mapa bajo el nombre del heroe
+
+            printf("esta seguro que desea salir?\t(s/n)");
+            fflush(stdin);
+            scanf("%c", &decisionSalir);
+            if(decisionSalir=='s')
+            {
+                exit(1);
+            }
+
 
             break;
         }
