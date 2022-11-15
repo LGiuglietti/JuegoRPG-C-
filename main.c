@@ -23,6 +23,7 @@ int main()
 MENU:
     while(fin==0)
     {
+        printf("habitacion: %d", jugador.habitacionActual);
         printf("VIDA: %d/%d\n\n\n\n",jugador.vidaActual,jugador.vidaMax);
         printf("\nque desea hacer?\n");
         printf("1: avanzar\t");

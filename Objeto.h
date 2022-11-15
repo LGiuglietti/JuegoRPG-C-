@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <windows.h>
-#define PERGAMINO "pergamino.bin"
+#define PERGAMINO "pergaminos.bin"
 #define PERGASENARCHI 3
 #define ARMA "armas.bin"
 #define ARMADURA "armaduras.bin"

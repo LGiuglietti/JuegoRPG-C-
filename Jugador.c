@@ -28,7 +28,7 @@ Heroe recogerLootCofre(Heroe jugador)
 
     if(cantEspaciosUsados<LIMITE)
     {
-        printf("Encuentra una pocion y un pergamino!!");
+        printf("Encuentra una pocion, un pergamino y algo mas!!\n");
         Sleep(2300);
         int decisionCofre=3;
 
@@ -91,7 +91,7 @@ Heroe armaduraoarma(Heroe jugador)
         jugador.armadura=armadura.modificador;
     }
     Sleep(2300);
-
+    system("cls");
     return jugador;
 }
 
@@ -99,10 +99,16 @@ int combate(Heroe* jug)
 {
     float nivelJugador=jug->cantidadCombates;
     float statsJugador=0;
-    statsJugador=((jug->atk+jug->armadura)/2);
+    statsJugador=jug->atk;
+    statsJugador=jug->armadura+statsJugador;
+    statsJugador=(statsJugador/2);
+
     nivelJugador=nivelJugador+statsJugador;
     int nivelJugadorEntero=0;
     nivelJugadorEntero=nivelJugador;
+
+    printf("\nnivel jugador: %d\n",nivelJugadorEntero);
+    printf("\nnivel jugador: %f\n",nivelJugador);
     Mob aux=depersistenciamob(nivelJugadorEntero);
     int seescapo=0;///Si escapa se cambiaria a 1 este valor y si no queda igual
     Heroe heroeaux=(*jug);
@@ -114,12 +120,13 @@ int combate(Heroe* jug)
 
     int variableSwitch=0;
 
-    while(heroeaux.vidaActual!=0 && aux.estado!=0)
+    while(heroeaux.vidaActual!=0 && aux.vida!=0)
     {
-        printf("Que desea hacer?");
-        printf("1: atacar");
-        printf("2: utilizar objeto");
-        printf("3: intentar retroceder");
+        printf("VIDA: %d/%d\t\t\t\t%s: %d\n\n\n\n",jug->vidaActual,jug->vidaMax,aux.nombre,aux.vida);
+        printf("Que desea hacer?\n");
+        printf("1: atacar\t");
+        printf("2: utilizar objeto\t");
+        printf("3: intentar retroceder\n");
         fflush(stdin);
         scanf("%i",&variableSwitch);
 
@@ -133,6 +140,10 @@ int combate(Heroe* jug)
             break;
         case 3:
             seescapo=intentoescape(seescapo,&aux);
+            if(seescapo==1)
+            {
+                aux.vida=0;
+            }
             break;
         }
 
@@ -140,20 +151,14 @@ int combate(Heroe* jug)
         system("cls");
     }
 
-    if(aux.vida<=0)
+    if(aux.estado==0)
     {
         heroeaux.cantidadCombates++;
         heroeaux.vidaMax+=2;     //sube su vida en 2
         heroeaux.vidaActual+=2;  //se cura en 2
-        //actualizacion de estado de habitacion de 0 a 1 y actualizacion de ubicacion de jugador
-    }
-    else
-    {
         printf("Ha Muerto");
+        system("pause");
     }
-
-    (*jug)=heroeaux;
-
     return seescapo;
 }
 
@@ -173,12 +178,12 @@ Heroe ataque(Heroe jugador,Mob* elmob)
     {
         printf("en un cruce de ataques tanto %s como %s reciben danio por igual\n",jugador.nombre,elmob->nombre);
         aux=mobatacado(aux,danioAtaque);
-        printf("el %s recibe %d puntos de danio",elmob->nombre,danioAtaque);
+        printf("el %s recibe %d puntos de danio\n",elmob->nombre,danioAtaque);
         jugador=recibedanio(jugador,aux.danio);
     }
     else
     {
-        printf("tu ataque fallo y el %s aprovecha y te ataca",elmob->nombre);
+        printf("tu ataque fallo y el %s aprovecha y te ataca\n",elmob->nombre);
         jugador=recibedanio(jugador,aux.danio);
     }
 
@@ -268,8 +273,7 @@ int intentoescape(int seescapo,Mob* elmob)
     seescapo=rand()%2;
     if(seescapo==1)
     {
-        //funcion retroceder;
-        elmob->vida=0; //para cortar el bucle, la vida del enemigo se resetea en caso de huir
+        printf("escapaste de la habitacion con exito");
     }
     else
     {

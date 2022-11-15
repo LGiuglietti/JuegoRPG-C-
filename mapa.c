@@ -10,7 +10,7 @@ nodoArbol* crearNodoArbol(int dato)
     aux->id=dato;
     aux->derecha=NULL;
     aux->izquierda=NULL;
-    aux->encuentro=rand()%1;
+    aux->encuentro=rand()%2;
     aux->estado=0;
     return aux;
 }
@@ -113,6 +113,7 @@ void avanzarIzquierda(nodoArbol* mapa, int habitacionActual, Heroe* jugador)
         if(mapa->derecha==NULL)
         {
             // combateBoss
+            printf("error boss");
         }
         else
         {
@@ -123,12 +124,12 @@ void avanzarIzquierda(nodoArbol* mapa, int habitacionActual, Heroe* jugador)
             {
                 if(aux->encuentro==1)
                 {
-                    printf("el cadaver de tu enemigo yace en el suelo");
+                    printf("el cadaver de tu enemigo yace en el suelo\n");
                     Sleep(2300);
                 }
                 else
                 {
-                    printf("el cofre abierto yace en la habitacion");
+                    printf("el cofre abierto yace en la habitacion\n");
                     Sleep(2300);
                 }
             }
@@ -136,12 +137,22 @@ void avanzarIzquierda(nodoArbol* mapa, int habitacionActual, Heroe* jugador)
             {
                 if(aux->encuentro==1)
                 {
-                    combate(jugador);
+                    int seEscapo=combate(jugador);
+                    if(seEscapo==0)
+                    {
+                        aux->estado=1;
+                    }
+                    else
+                    {
+                        retroceso(jugador,mapa);
+                    }
                 }
                 else
                 {
                     (*jugador)=recogerLootCofre((*jugador));
+                    aux->estado=1;
                 }
+
             }
 
         }
@@ -150,11 +161,11 @@ void avanzarIzquierda(nodoArbol* mapa, int habitacionActual, Heroe* jugador)
     {
         if(habitacionActual>mapa->id)
         {
-            buscarArbol(mapa->derecha,habitacionActual);
+            mapa->derecha=buscarArbol(mapa->derecha,habitacionActual);
         }
         else
         {
-            buscarArbol(mapa->izquierda,habitacionActual);
+            mapa->izquierda=buscarArbol(mapa->izquierda,habitacionActual);
         }
     }
 }
@@ -165,6 +176,7 @@ void avanzarDerecha(nodoArbol*mapa, int habitacionActual, Heroe*jugador)
         if(mapa->derecha==NULL)
         {
             // combateBoss
+            printf("error boss");
         }
         else
         {
@@ -176,12 +188,12 @@ void avanzarDerecha(nodoArbol*mapa, int habitacionActual, Heroe*jugador)
             {
                 if(aux->encuentro==1)
                 {
-                    printf("el cadaver de tu enemigo yace en el suelo");
+                    printf("el cadaver de tu enemigo yace en el suelo\n");
                     Sleep(2300);
                 }
                 else
                 {
-                    printf("el cofre abierto yace en la habitacion");
+                    printf("el cofre abierto yace en la habitacion\n");
                     Sleep(2300);
                 }
             }
@@ -189,12 +201,18 @@ void avanzarDerecha(nodoArbol*mapa, int habitacionActual, Heroe*jugador)
             {
                 if(aux->encuentro==1)
                 {
-                    combate(jugador);
+                    int seEscapo=combate(jugador);
+                    if(seEscapo==0)
+                    {
+                        aux->estado=1;
+                    }
                 }
                 else
                 {
                     (*jugador)=recogerLootCofre((*jugador));
+                    aux->estado=1;
                 }
+
             }
 
         }
@@ -203,14 +221,15 @@ void avanzarDerecha(nodoArbol*mapa, int habitacionActual, Heroe*jugador)
     {
         if(habitacionActual>mapa->id)
         {
-            buscarArbol(mapa->derecha,habitacionActual);
+            mapa->derecha=buscarArbol(mapa->derecha,habitacionActual);
         }
         else
         {
-            buscarArbol(mapa->izquierda,habitacionActual);
+            mapa->izquierda=buscarArbol(mapa->izquierda,habitacionActual);
         }
     }
 }
+
 void retroceso(Heroe*jug,nodoArbol*mapa)
 {
     nodoArbol*aux=mapa;

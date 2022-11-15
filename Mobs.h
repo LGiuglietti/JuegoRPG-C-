@@ -5,7 +5,6 @@
 #include <stdlib.h>
 #define MOBS "mobs.bin"
 #define CANTMOBS 6
-#define BOSSES "bosses.bin"
 
 typedef struct Mob
 {
