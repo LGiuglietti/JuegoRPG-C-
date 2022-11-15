@@ -97,19 +97,7 @@ Heroe armaduraoarma(Heroe jugador)
 
 int combate(Heroe* jug)
 {
-    float nivelJugador=jug->cantidadCombates;
-    float statsJugador=0;
-    statsJugador=jug->atk;
-    statsJugador=jug->armadura+statsJugador;
-    statsJugador=(statsJugador/2);
-
-    nivelJugador=nivelJugador+statsJugador;
-    int nivelJugadorEntero=0;
-    nivelJugadorEntero=nivelJugador;
-
-    printf("\nnivel jugador: %d\n",nivelJugadorEntero);
-    printf("\nnivel jugador: %f\n",nivelJugador);
-    Mob aux=depersistenciamob(nivelJugadorEntero);
+    Mob aux=depersistenciamob(jug->cantidadCombates);
     int seescapo=0;///Si escapa se cambiaria a 1 este valor y si no queda igual
     Heroe heroeaux=(*jug);
 
@@ -302,7 +290,7 @@ void efectoObjetoEnCombate(Objeto objetito,Heroe*jug,Mob*mob)
     else
     {
         printf("utilizando tu pergamino de %s atacas al %s",objetito.nombre, mob->nombre);
-        mob->vida=mob->vida-objetito.modificador;
+        (mob->vida)=(mob->vida)-objetito.modificador;
         Sleep(2300);
         system("cls");
     }

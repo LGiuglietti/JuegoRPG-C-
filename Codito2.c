@@ -125,10 +125,5 @@ void mostrarlista(nododoble* lista)
             i++;
             seg=seg->sig;
         }
-        while(i<11)
-        {
-            printf("%i. ------  ",i);
-            i++;
-        }
     }
 }
