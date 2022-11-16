@@ -5,7 +5,7 @@ void crearmob()
 {
     Mob nuevomob;
 
-    for(int i=0;i<CANTMOBS;i++)
+    for(int i=0; i<CANTMOBS; i++)
     {
         printf("Ingrese el nombre del Mob a crear: ");
         fflush(stdin);
@@ -14,10 +14,6 @@ void crearmob()
         printf("De una breve descripcion de su Mob (Prefacio): ");
         fflush(stdin);
         gets(nuevomob.prefacio);
-
-        printf("Ingrese la defensa del Mob a crear: ");
-        fflush(stdin);
-        scanf("%i",&nuevomob.defensa);
 
         printf("Ingrese el danio del Mob a crear: ");
         fflush(stdin);
@@ -75,3 +71,35 @@ Mob mobatacado(Mob elmob,int danio)
 }
 
 ///Boss
+Boss creacionBoss1()
+{
+    Boss Abominacion;
+    Abominacion.theboss.danio=5;
+    Abominacion.theboss.estado=1;
+    strcpy(Abominacion.theboss.nombre,"Abominacion");
+    strcpy(Abominacion.theboss.prefacio,"Una aberracion de gran tamanio, el Abominacion, una criatura muy fuerte conformada por varios cadaveres cocidos se encuentra frente a nuestro heroe");
+    Abominacion.theboss.vida=15;
+
+    return Abominacion;
+}
+Boss creacionBoss2()
+{
+    Boss magoOscuro;
+    magoOscuro.theboss.estado=1;
+    strcpy(magoOscuro.theboss.nombre,"Mago Oscuro");
+    strcpy(magoOscuro.theboss.prefacio,"El alumno preferido del liche, o por lo menos el unico que sobrevivio, ten cuidado con su magia");
+    magoOscuro.theboss.vida=20;
+    inicfila(&magoOscuro.conjuros);
+
+
+    FILE*fp=fopen("pergaminos.bin","rb");
+    Objeto conjuro;
+    for(int i=0; i<4; i++)
+    {
+        while(fread(&conjuro,sizeof(Objeto),1,fp)>0)
+        {
+            agregar(&magoOscuro.conjuros, conjuro);
+        }
+    }
+    return magoOscuro;
+}

@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "Filas.h"
 #define MOBS "mobs.bin"
 #define CANTMOBS 6
 
@@ -12,15 +13,13 @@ typedef struct Mob
     char prefacio[200];
     int vida;
     int danio;
-    int defensa;
     int estado;///0 muerto, 1 vivo
 }Mob;
 
 typedef struct Boss
 {
     struct Mob theboss;
-    struct fila* primero;
-    struct fila* ultimo;
+    Fila conjuros;
 }Boss;
 
 ///Mob

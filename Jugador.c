@@ -109,8 +109,6 @@ int combate(Heroe* jug)
     int nivelJugadorEntero=0;
     nivelJugadorEntero=nivelJugador;
 
-    printf("\nnivel jugador: %d\n",nivelJugadorEntero);
-    printf("\nnivel jugador: %f\n",nivelJugador);
     Mob aux=depersistenciamob(nivelJugadorEntero);
     int seescapo=0;///Si escapa se cambiaria a 1 este valor y si no queda igual
     Heroe heroeaux=(*jug);
@@ -157,11 +155,13 @@ int combate(Heroe* jug)
     if((aux.estado==0)&&(seescapo!=1))
 
     {
+        system("cls");
         heroeaux.cantidadCombates++;
         heroeaux.vidaMax+=2;     //sube su vida en 2
         heroeaux.vidaActual+=2;  //se cura en 2
         printf("Ha Muerto");
         system("pause");
+        system("cls");
     }
     return seescapo;
 }

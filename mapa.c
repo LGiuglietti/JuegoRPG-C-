@@ -6,12 +6,12 @@ nodoArbol* inicArbol()
 }
 nodoArbol* crearNodoArbol(int dato)
 {
-    srand(time(NULL));
     nodoArbol*aux=(nodoArbol*)malloc(sizeof(nodoArbol));
     aux->id=dato;
     aux->derecha=NULL;
     aux->izquierda=NULL;
-    aux->encuentro=rand()%1;
+    aux->encuentro=rand()%2;
+    printf("%d", aux->encuentro);
     aux->estado=0;
     return aux;
 }
