@@ -149,7 +149,7 @@ int combate(Heroe* jug)
         jug->cantidadCombates++;
         jug->vidaMax+=2;     //sube su vida en 2
         jug->vidaActual+=2;  //se cura en 2
-        printf("Ha Muerto");
+        printf("Ha Muerto\n");
         system("pause");
         system("cls");
     }

@@ -514,7 +514,7 @@
 1668556361 source:d:\utn\git juego\juegorpg-c-\objeto.c
 	"Objeto.h"
 
-1668623680 source:d:\utn\git juego\juegorpg-c-\main.c
+1668623955 source:d:\utn\git juego\juegorpg-c-\main.c
 	<stdio.h>
 	<stdlib.h>
 	"mapa.h"
