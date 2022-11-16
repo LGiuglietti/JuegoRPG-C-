@@ -52,7 +52,7 @@ Objeto dropoti()
     Objeto poti;
     strcpy(poti.nombre,"Curacion");
     poti.modificador=5;
-    poti.tipo=1;
+    poti.tipo=2;
 
     return poti;
 }
@@ -100,6 +100,7 @@ Objeto depersistirpergamino(int ultimo)
     {
         fseek(fp,sizeof(Objeto)*ultimo,SEEK_SET);
         fread(&drop,sizeof(Objeto),1,fp);
+        drop.tipo=1;
 
         fclose(fp);
     }

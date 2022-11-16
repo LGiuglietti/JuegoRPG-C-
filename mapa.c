@@ -264,13 +264,7 @@ void retroceso(Heroe*jug,nodoArbol*mapa)
             system("cls");
         }
     }
-    else
-    {
-        if(aux->encuentro==1)
-        {
-            combate(jug);
-        }
-    }
+
 }
 
 nodoArbol*buscarYmostrarRestrocediendo(nodoArbol*arbol, int dato)

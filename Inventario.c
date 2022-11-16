@@ -11,12 +11,8 @@ nododoble* usarobjeto(nododoble* inventario,Objeto elobjeto)
 {
     if(inventario!=NULL)
     {
-        borrarnodo(inventario,elobjeto.nombre);
+        inventario=borrarnodo(inventario,elobjeto.nombre);
 
-    }
-    else
-    {
-        printf("No hay elementos");
     }
     //Hacer la verificacion desde donde llamo la funcion y de ahi en caso de que el inventairo sea NULL hago el printf
 
@@ -56,7 +52,7 @@ void verinventario(nododoble* inventario)
         while(limite<LIMITE)
         {
             limite++;
-            printf(" %i.---------",limite);
+            printf("%i.---------\n",limite);
         }
         printf("Que desea utilizar");
     }
@@ -72,8 +68,7 @@ Objeto buscarobjeto(nododoble* inventario,int posicion)
     {
         nododoble* aux=inventario;
         int i=0;
-
-        while((i<posicion)&&(aux!=NULL))
+        while(i!=posicion && aux!=NULL)
         {
             aux=aux->sig;
             i++;
@@ -83,11 +78,6 @@ Objeto buscarobjeto(nododoble* inventario,int posicion)
         {
             abuscar=aux->dato;
         }
-        else
-        {
-            printf("No se encontro");
-        }
-
     }
 
     return abuscar;

@@ -88,9 +88,9 @@ nododoble* borrarnodo(nododoble* lista,char dato[])
 {
     if(lista!=NULL)
     {
-        nododoble* aborrar;
+        nododoble* aborrar=NULL;
 
-        if(strcpy(lista->dato.nombre,dato)==0)
+        if(strcmpi(lista->dato.nombre,dato)==0)
         {
             aborrar=lista;
             lista=lista->sig;
@@ -98,25 +98,21 @@ nododoble* borrarnodo(nododoble* lista,char dato[])
         }
         else
         {
-            aborrar=buscar(lista,dato);
+            nododoble *seg=lista;
+            nododoble *ante=seg;
 
-            if(aborrar!=NULL)
+            while(seg!=NULL)
             {
-                if(aborrar->sig==NULL)
+                if(strcmpi(seg->dato.nombre,dato)==0)
                 {
-                    (aborrar->ante)->sig=NULL;
+                    aborrar=seg;
+                    seg=seg->sig;
+                    seg->ante=ante;
+                    ante->sig=aborrar->sig;
+                    free(aborrar);
                 }
-                else
-                {
-                    (aborrar->ante)->sig=aborrar->sig;
-                    (aborrar->sig)->ante=aborrar->ante;
-                }
-
-                free(aborrar);
-            }
-            else
-            {
-                printf("No existe el objeto solicitado");
+                ante=seg;
+                seg=seg->sig;
             }
         }
     }
@@ -127,7 +123,6 @@ nododoble* borrarnodo(nododoble* lista,char dato[])
 
     return lista;
 }
-
 void mostrarlista(nododoble* lista)
 {
     if(lista==NULL)
@@ -141,7 +136,7 @@ void mostrarlista(nododoble* lista)
 
         while(seg!=NULL)
         {
-            printf("%i. %s  ",i,seg->dato.nombre);
+            printf("%i. %s  \n",i,seg->dato.nombre);
             i++;
             seg=seg->sig;
         }

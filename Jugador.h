@@ -7,7 +7,6 @@
 #include <windows.h>
 #include "Inventario.h"
 #include "Mobs.h"
-#include "Filas.h"
 
 typedef struct Heroe
 {

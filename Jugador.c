@@ -247,18 +247,15 @@ Heroe utilizarObjetoFueraDeCombate(Heroe jugador)
             scanf("%i",&opusuario);
             system("pause");
         }
-
+        opusuario=opusuario-1;
         Objeto elobjeto=buscarobjeto(jugador.inventarioheroe,opusuario);
-
-        if(elobjeto.tipo!=0)
+        if(elobjeto.tipo!=1)
         {
+            printf("254");
             jugador.inventarioheroe=usarobjeto(jugador.inventarioheroe,elobjeto);
-            efectoObjetoFueraDeCombate(elobjeto,&jugador);
+            printf("256");
         }
-        else
-        {
-            printf("No hay Objetos");
-        }
+        efectoObjetoFueraDeCombate(elobjeto,&jugador);
     }
     return jugador;
 }
@@ -282,17 +279,17 @@ Heroe utilizarObjetoEnCombate(Heroe jugador,Mob*mob)
             scanf("%i",&opusuario);
             system("pause");
         }
-
+        opusuario=opusuario-1;
         Objeto elobjeto=buscarobjeto(jugador.inventarioheroe,opusuario);
 
         if(elobjeto.tipo!=0)
         {
             jugador.inventarioheroe=usarobjeto(jugador.inventarioheroe,elobjeto);
             efectoObjetoEnCombate(elobjeto,&jugador,mob);
-        }
-        else
-        {
-            printf("No hay Objetos");
+            if(mob->vida<=0)
+            {
+                mob->estado=0;
+            }
         }
     }
     return jugador;
@@ -312,6 +309,7 @@ int intentoescape(int seescapo,Mob* elmob)
 
     return seescapo;
 }
+
 void efectoObjetoEnCombate(Objeto objetito,Heroe*jug,Mob*mob)
 {
     if(objetito.tipo==2) //el item es pocion
@@ -337,6 +335,7 @@ void efectoObjetoEnCombate(Objeto objetito,Heroe*jug,Mob*mob)
         system("cls");
     }
 }
+
 void efectoObjetoFueraDeCombate(Objeto objetito,Heroe*jug)
 {
     if(objetito.tipo==2) //el item es pocion
@@ -356,9 +355,10 @@ void efectoObjetoFueraDeCombate(Objeto objetito,Heroe*jug)
     }
     else
     {
-        printf("no es momento de usar un pergamino");
+        printf("no es momento de usar eso");
     }
 }
+
 void combateBoss(Heroe* jug, int nivelMazmorra)
 {
     Boss boss;
@@ -375,7 +375,7 @@ void combateBoss(Heroe* jug, int nivelMazmorra)
     {
         boss=creacionBoss3();
     }
-    printf("Al entrar a la habitacion, sucecede algo inesperado y se encuentra a %s, %s\n",boss.theboss.nombre,boss.theboss.prefacio);
+    printf("Al entrar a la habitacion, sucecede algo inesperado y te encuentras a %s, %s\n",boss.theboss.nombre,boss.theboss.prefacio);
     printf("PREPARESE PARA EL COMBATE!!\n");
     system("pause");
     system("cls");
@@ -425,7 +425,10 @@ void combateBoss(Heroe* jug, int nivelMazmorra)
             heroeaux=utilizarObjetoEnCombate(heroeaux,&boss.theboss);
             break;
         }
-
+        if(boss.theboss.vida<=0)
+        {
+            boss.theboss.estado=1;
+        }
         (*jug)=heroeaux;
         system("pause");
         system("cls");
