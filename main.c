@@ -56,7 +56,7 @@ MENU:
                     printf("nuestro heroe avanza por la izquierda");
                     Sleep(2300);
                     system("cls");
-                    avanzarIzquierda(ada[contadorNiveles].mapa,jugador.habitacionActual,&jugador, contadorNiveles);
+                    avanzarIzquierda(ada[contadorNiveles].mapa,jugador.habitacionActual,&jugador, contadorNiveles,&fin);
                     break;
 
                 case 2:
@@ -64,7 +64,7 @@ MENU:
                     printf("nuestro heroe avanza por la derecha");
                     Sleep(2300);
                     system("cls");
-                    avanzarDerecha(ada[contadorNiveles].mapa,jugador.habitacionActual,&jugador, contadorNiveles);
+                    avanzarDerecha(ada[contadorNiveles].mapa,jugador.habitacionActual,&jugador, contadorNiveles,&fin);
                     system("cls");
                     break;
                 }

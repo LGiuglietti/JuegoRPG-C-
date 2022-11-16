@@ -107,13 +107,13 @@ nodoArbol*cargaMapa(nodoArbol*arbol)
     arbol=insertar(arbol,7);
     return arbol;
 }
-void avanzarIzquierda(nodoArbol* mapa, int habitacionActual, Heroe* jugador, int nivelMazmorra)
+void avanzarIzquierda(nodoArbol* mapa, int habitacionActual, Heroe* jugador, int nivelMazmorra, int *finNivel)
 {
     if(habitacionActual==mapa->id)
     {
         if(mapa->derecha==NULL)
         {
-            combateBoss(jugador, nivelMazmorra);
+            combateBoss(jugador, nivelMazmorra, finNivel);
         }
         else
         {
@@ -162,21 +162,21 @@ void avanzarIzquierda(nodoArbol* mapa, int habitacionActual, Heroe* jugador, int
     {
         if(habitacionActual>mapa->id)
         {
-            avanzarIzquierda(mapa->derecha,habitacionActual,jugador, nivelMazmorra);
+            avanzarIzquierda(mapa->derecha,habitacionActual,jugador, nivelMazmorra, finNivel);
         }
         else
         {
-            avanzarIzquierda(mapa->izquierda,habitacionActual,jugador, nivelMazmorra);
+            avanzarIzquierda(mapa->izquierda,habitacionActual,jugador, nivelMazmorra, finNivel);
         }
     }
 }
-void avanzarDerecha(nodoArbol*mapa, int habitacionActual, Heroe*jugador, int nivelMazmorra)
+void avanzarDerecha(nodoArbol*mapa, int habitacionActual, Heroe*jugador, int nivelMazmorra, int *finNivel)
 {
     if(habitacionActual==mapa->id)
     {
         if(mapa->derecha==NULL)
         {
-            combateBoss(jugador, nivelMazmorra);
+            combateBoss(jugador, nivelMazmorra, finNivel);
         }
         else
         {
@@ -222,11 +222,11 @@ void avanzarDerecha(nodoArbol*mapa, int habitacionActual, Heroe*jugador, int niv
     {
         if(habitacionActual>mapa->id)
         {
-            avanzarDerecha(mapa->derecha,habitacionActual,jugador, nivelMazmorra);
+            avanzarDerecha(mapa->derecha,habitacionActual,jugador, nivelMazmorra, finNivel);
         }
         else
         {
-            avanzarDerecha(mapa->izquierda,habitacionActual,jugador, nivelMazmorra);
+            avanzarDerecha(mapa->izquierda,habitacionActual,jugador, nivelMazmorra, finNivel);
         }
     }
 }
@@ -247,12 +247,11 @@ void retroceso(Heroe*jug,nodoArbol*mapa)
     else
     {
         jug->habitacionActual=4;
-        /*aux=buscarYmostrarRestrocediendo(mapa,jug->habitacionActual);*/
     }
 
     if(jug->habitacionActual!=4)
     {
-        if(aux->encuentro==1)
+        /*if(aux->encuentro==1)
         {
             printf("el cadaver de tu enemigo yace en el suelo\n");
             Sleep(2300);
@@ -261,7 +260,7 @@ void retroceso(Heroe*jug,nodoArbol*mapa)
         {
             printf("el cofre abierto yace en la habitacion\n");
             Sleep(2300);
-        }
+        }*/
     }
     else
     {

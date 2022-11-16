@@ -100,7 +100,6 @@ Heroe armaduraoarma(Heroe jugador)
 int combate(Heroe* jug)
 {
     Mob aux=depersistenciamob(jug->cantidadCombates);
-    printf("%d", jug->cantidadCombates);
     int seescapo=0;///Si escapa se cambiaria a 1 este valor y si no queda igual
     Heroe heroeaux=(*jug);
 
@@ -203,7 +202,11 @@ Heroe ataqueBossMagico(Heroe jugador,Mob* elmob, Objeto conjuro)
     else if(variableAtaque<=9 && variableAtaque>=5)
     {
         printf("en un cruce de ataques tanto %s como %s reciben danio por igual\n",jugador.nombre,elmob->nombre);
-        printf("el %s uso el conjuro: %s",aux.nombre, conjuro.nombre);
+        printf("el %s uso el conjuro: %s\n",aux.nombre, conjuro.nombre);
+        if(strcmp(aux.nombre,"Mago Oscuro")==0)
+        {
+            conjuro.modificador=conjuro.modificador/2;
+        }
         aux=mobatacado(aux,danioAtaque);
         printf("el %s recibe %d puntos de danio\n",aux.nombre,danioAtaque);
         jugador=recibedanio(jugador,conjuro.modificador);
@@ -211,9 +214,12 @@ Heroe ataqueBossMagico(Heroe jugador,Mob* elmob, Objeto conjuro)
     else
     {
         printf("tu ataque fallo y el %s aprovecha y te ataca\n",elmob->nombre);
-        printf("el %s uso el conjuro: %s",aux.nombre, conjuro.nombre);
+        printf("el %s uso el conjuro: %s\n",aux.nombre, conjuro.nombre);
+        if(strcmp(aux.nombre,"Mago Oscuro")==0)
+        {
+            conjuro.modificador=conjuro.modificador/2;
+        }
         jugador=recibedanio(jugador,conjuro.modificador);
-
     }
 
     (*elmob)=aux;
@@ -251,9 +257,7 @@ Heroe utilizarObjetoFueraDeCombate(Heroe jugador)
         Objeto elobjeto=buscarobjeto(jugador.inventarioheroe,opusuario);
         if(elobjeto.tipo!=1)
         {
-            printf("254");
             jugador.inventarioheroe=usarobjeto(jugador.inventarioheroe,elobjeto);
-            printf("256");
         }
         efectoObjetoFueraDeCombate(elobjeto,&jugador);
     }
@@ -281,15 +285,13 @@ Heroe utilizarObjetoEnCombate(Heroe jugador,Mob*mob)
         }
         opusuario=opusuario-1;
         Objeto elobjeto=buscarobjeto(jugador.inventarioheroe,opusuario);
+        printf("%s", elobjeto.nombre);
+        jugador.inventarioheroe=usarobjeto(jugador.inventarioheroe,elobjeto);
+        efectoObjetoEnCombate(elobjeto,&jugador,mob);
 
-        if(elobjeto.tipo!=0)
+        if(mob->vida<=0)
         {
-            jugador.inventarioheroe=usarobjeto(jugador.inventarioheroe,elobjeto);
-            efectoObjetoEnCombate(elobjeto,&jugador,mob);
-            if(mob->vida<=0)
-            {
-                mob->estado=0;
-            }
+            mob->estado=0;
         }
     }
     return jugador;
@@ -324,13 +326,13 @@ void efectoObjetoEnCombate(Objeto objetito,Heroe*jug,Mob*mob)
         {
             printf("te curas 5 puntos de golpe");
         }
-        Sleep(2000);
+        Sleep(2300);
         system("cls");
     }
-    else
+    else//es pergamino
     {
         printf("utilizando tu pergamino de %s atacas al %s",objetito.nombre, mob->nombre);
-        mob->vida=mob->vida-objetito.modificador;
+        (mob->vida)-=objetito.modificador;
         Sleep(2300);
         system("cls");
     }
@@ -359,7 +361,7 @@ void efectoObjetoFueraDeCombate(Objeto objetito,Heroe*jug)
     }
 }
 
-void combateBoss(Heroe* jug, int nivelMazmorra)
+void combateBoss(Heroe* jug, int nivelMazmorra,int *finNivel)
 {
     Boss boss;
     Heroe heroeaux=(*jug);
@@ -427,7 +429,7 @@ void combateBoss(Heroe* jug, int nivelMazmorra)
         }
         if(boss.theboss.vida<=0)
         {
-            boss.theboss.estado=1;
+            boss.theboss.estado=0;
         }
         (*jug)=heroeaux;
         system("pause");
@@ -441,6 +443,8 @@ void combateBoss(Heroe* jug, int nivelMazmorra)
         jug->vidaMax+=2;     //sube su vida en 2
         jug->vidaActual+=2;  //se cura en 2
         printf("Ha Muerto el Jefe del Piso");
+        (*finNivel)=1;
+        jug->habitacionActual=4;
         system("pause");
         system("cls");
     }

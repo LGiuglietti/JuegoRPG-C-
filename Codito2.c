@@ -111,8 +111,11 @@ nododoble* borrarnodo(nododoble* lista,char dato[])
                     ante->sig=aborrar->sig;
                     free(aborrar);
                 }
-                ante=seg;
-                seg=seg->sig;
+                else
+                {
+                    ante=seg;
+                    seg=seg->sig;
+                }
             }
         }
     }

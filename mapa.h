@@ -32,8 +32,8 @@ nodoArbol* borrarNodo(nodoArbol* nodo, int dato);
 int esHoja (nodoArbol* nodo);
 // prototipado manejo de mapa
 nodoArbol*cargaMapa(nodoArbol*arbol);
-void avanzarIzquierda(nodoArbol*mapa, int habitacionActual, Heroe*jugador, int nivelMazmorra);
-void avanzarDerecha(nodoArbol*mapa, int habitacionActual, Heroe*jugador, int nivelMazmorra);
+void avanzarIzquierda(nodoArbol* mapa, int habitacionActual, Heroe* jugador, int nivelMazmorra, int *finNivel);
+void avanzarDerecha(nodoArbol*mapa, int habitacionActual, Heroe*jugador, int nivelMazmorra, int *finNivel);
 nodoArbol*buscarYmostrarRestrocediendo(nodoArbol*arbol, int dato);
 void retroceso(Heroe*jug,nodoArbol*mapa);
 void cargaNivelesMapa(celda ada[]);

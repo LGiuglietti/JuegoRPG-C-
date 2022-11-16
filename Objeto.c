@@ -134,7 +134,6 @@ Objeto depersistirarmadura(int ultimo)
     {
         fseek(fp,ultimo*sizeof(Objeto),SEEK_SET);
         fread(&drop,sizeof(Objeto),1,fp);
-
         fclose(fp);
     }
 
