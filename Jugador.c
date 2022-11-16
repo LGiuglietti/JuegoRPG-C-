@@ -169,6 +169,7 @@ Heroe ataque(Heroe jugador,Mob* elmob)
 {
     int variableAtaque=rand()%11+1;
     int danioAtaque=rand()%7+1;;
+    variableAtaque+=jugador.atk;
     Mob aux=(*elmob);
 
     if(variableAtaque>=10)
@@ -239,7 +240,7 @@ Heroe utilizarObjetoFueraDeCombate(Heroe jugador)
 
 Heroe utilizarObjetoEnCombate(Heroe jugador,Mob*mob)
 {
-    printf("En medio del combate, abres tu bolsa con esperanza de encontrar algo que te ayude en este combate");
+    printf("En medio del combate, abres tu bolsa con esperanza de encontrar algo que te ayude en este combate\n");
     verinventario(jugador.inventarioheroe);
     if(jugador.inventarioheroe!=NULL)
     {
@@ -331,5 +332,96 @@ void efectoObjetoFueraDeCombate(Objeto objetito,Heroe*jug)
     else
     {
         printf("no es momento de usar un pergamino");
+    }
+}
+void combateBoss(Heroe* jug, int nivelMazmorra)
+{
+    Boss boss;
+    Heroe heroeaux=(*jug);
+    if(nivelMazmorra==0)
+    {
+        boss=creacionBoss1();
+    }
+    else if(nivelMazmorra==1)
+    {
+        boss=creacionBoss2();
+    }
+    else
+    {
+        boss=creacionBoss3();
+    }
+    printf("Al entrar a la habitacion, sucecede algo inesperado y se encuentra a %s, %s\n",boss.theboss.nombre,boss.theboss.prefacio);
+    printf("PREPARESE PARA EL COMBATE!!\n");
+    system("pause");
+    system("cls");
+
+    int variableSwitch=0;
+    int varianzaAtaquesLiche=0;
+    Objeto conjuro;
+
+    while(heroeaux.vidaActual>=0 && boss.theboss.estado!=0)
+    {
+        printf("VIDA: %d/%d\t\t\t\t%s: %d\n\n\n\n",jug->vidaActual,jug->vidaMax,boss.theboss.nombre,boss.theboss.vida);
+        printf("Que desea hacer?\n");
+        printf("1: atacar\t");
+        printf("2: utilizar objeto\t");
+        fflush(stdin);
+        scanf("%i",&variableSwitch);
+
+        switch (variableSwitch)
+        {
+        case 1:
+            if(nivelMazmorra==2)
+            {
+                if(varianzaAtaquesLiche%2==0)
+                {
+                    heroeaux=ataque(heroeaux,&boss.theboss);
+                    varianzaAtaquesLiche++;
+                }
+                else
+                {
+                    conjuro=extraer(&boss.conjuros);
+                    printf("el liche usa el conjuro: %s", conjuro.nombre);
+                    heroeaux.vidaActual-=conjuro.modificador;
+                }
+
+            }
+            else if(nivelMazmorra==0)
+            {
+                heroeaux=ataque(heroeaux,&boss.theboss);
+            }
+            else
+            {
+                conjuro=extraer(&boss.conjuros);
+                printf("el Mago Oscuro usa el conjuro: %s", conjuro.nombre);
+                conjuro.modificador=conjuro.modificador/2;
+                conjuro.modificador+=1;
+                heroeaux.vidaActual-=conjuro.modificador;
+            }
+            break;
+        case 2:
+            heroeaux=utilizarObjetoEnCombate(heroeaux,&boss.theboss);
+            break;
+        }
+
+        (*jug)=heroeaux;
+        system("pause");
+        system("cls");
+    }
+
+    if(boss.theboss.estado==0)
+    {
+        system("cls");
+        jug->cantidadCombates++;
+        jug->vidaMax+=2;     //sube su vida en 2
+        jug->vidaActual+=2;  //se cura en 2
+        printf("Ha Muerto el Jefe del Piso");
+        system("pause");
+        system("cls");
+    }
+    else
+    {
+        printf("perdiste");
+        exit(1);
     }
 }

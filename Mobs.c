@@ -103,3 +103,27 @@ Boss creacionBoss2()
     }
     return magoOscuro;
 }
+Boss creacionBoss3()
+{
+    Boss liche;
+    liche.theboss.estado=1;
+    liche.theboss.danio=7;
+    strcpy(liche.theboss.nombre,"Liche");
+    strcpy(liche.theboss.prefacio,"Es el duenio de este castillo y amo de las almas");
+    liche.theboss.vida=30;
+    inicfila(&liche.conjuros);
+
+
+    FILE*fp=fopen("pergaminos.bin","rb");
+    Objeto conjuro;
+    for(int i=0; i<4; i++)
+    {
+        while(fread(&conjuro,sizeof(Objeto),1,fp)>0)
+        {
+            agregar(&liche.conjuros, conjuro);
+        }
+    }
+    return liche;
+}
+
+

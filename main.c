@@ -23,7 +23,6 @@ int main()
     int contadorNiveles=0;
     for(contadorNiveles=0; contadorNiveles<3; contadorNiveles++)
     {
-
         fin=0;
 MENU:
         while(fin==0)
@@ -57,7 +56,7 @@ MENU:
                     printf("nuestro heroe avanza por la izquierda");
                     Sleep(2300);
                     system("cls");
-                    avanzarIzquierda(ada[contadorNiveles].mapa,jugador.habitacionActual,&jugador);
+                    avanzarIzquierda(ada[contadorNiveles].mapa,jugador.habitacionActual,&jugador, contadorNiveles);
                     break;
 
                 case 2:
@@ -65,7 +64,7 @@ MENU:
                     printf("nuestro heroe avanza por la derecha");
                     Sleep(2300);
                     system("cls");
-                    avanzarDerecha(ada[contadorNiveles].mapa,jugador.habitacionActual,&jugador);
+                    avanzarDerecha(ada[contadorNiveles].mapa,jugador.habitacionActual,&jugador, contadorNiveles);
                     system("cls");
                     break;
                 }

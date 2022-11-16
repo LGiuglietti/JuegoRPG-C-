@@ -30,5 +30,8 @@ Mob mobatacado(Mob elmob,int danio);///Mide cuanta vida se le resta a un enemigo
 
 ///Boss
 Boss crearboss();
+Boss creacionBoss1();
+Boss creacionBoss2();
+Boss creacionBoss3();
 
 #endif // MOBS_H_INCLUDED

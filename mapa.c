@@ -10,7 +10,7 @@ nodoArbol* crearNodoArbol(int dato)
     aux->id=dato;
     aux->derecha=NULL;
     aux->izquierda=NULL;
-    aux->encuentro=/*rand()%2*/1;
+    aux->encuentro=rand()%2;
     aux->estado=0;
     return aux;
 }
@@ -106,13 +106,13 @@ nodoArbol*cargaMapa(nodoArbol*arbol)
     arbol=insertar(arbol,7);
     return arbol;
 }
-void avanzarIzquierda(nodoArbol* mapa, int habitacionActual, Heroe* jugador)
+void avanzarIzquierda(nodoArbol* mapa, int habitacionActual, Heroe* jugador, int nivelMazmorra)
 {
     if(habitacionActual==mapa->id)
     {
         if(mapa->derecha==NULL)
         {
-            // combateBoss
+            combateBoss(jugador, nivelMazmorra);
         }
         else
         {
@@ -161,21 +161,21 @@ void avanzarIzquierda(nodoArbol* mapa, int habitacionActual, Heroe* jugador)
     {
         if(habitacionActual>mapa->id)
         {
-            avanzarIzquierda(mapa->derecha,habitacionActual,jugador);
+            avanzarIzquierda(mapa->derecha,habitacionActual,jugador, nivelMazmorra);
         }
         else
         {
-            avanzarIzquierda(mapa->izquierda,habitacionActual,jugador);
+            avanzarIzquierda(mapa->izquierda,habitacionActual,jugador, nivelMazmorra);
         }
     }
 }
-void avanzarDerecha(nodoArbol*mapa, int habitacionActual, Heroe*jugador)
+void avanzarDerecha(nodoArbol*mapa, int habitacionActual, Heroe*jugador, int nivelMazmorra)
 {
     if(habitacionActual==mapa->id)
     {
         if(mapa->derecha==NULL)
         {
-            // combateBoss
+            combateBoss(jugador, nivelMazmorra);
         }
         else
         {
@@ -220,11 +220,11 @@ void avanzarDerecha(nodoArbol*mapa, int habitacionActual, Heroe*jugador)
     {
         if(habitacionActual>mapa->id)
         {
-            avanzarDerecha(mapa->derecha,habitacionActual,jugador);
+            avanzarDerecha(mapa->derecha,habitacionActual,jugador, nivelMazmorra);
         }
         else
         {
-            avanzarDerecha(mapa->izquierda,habitacionActual,jugador);
+            avanzarDerecha(mapa->izquierda,habitacionActual,jugador, nivelMazmorra);
         }
     }
 }
