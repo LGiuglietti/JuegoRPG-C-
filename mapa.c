@@ -210,6 +210,7 @@ void avanzarDerecha(nodoArbol*mapa, int habitacionActual, Heroe*jugador, int niv
                 {
                     (*jugador)=recogerLootCofre((*jugador));
                     aux->estado=1;
+                    jugador->cantidadCombates++;
                 }
 
             }
@@ -281,6 +282,18 @@ nodoArbol*buscarYmostrarRestrocediendo(nodoArbol*arbol, int dato)
             printf("Nuestro heroe retrocede a la habitacion anterior");
             Sleep(2300);
             system("cls");
+            if(arbol->encuentro==1) //es combate
+            {
+                printf("el cadaver de tu enemigo yace en el suelo");
+                Sleep(2300);
+                system("cls");
+            }
+            else
+            {
+                printf("el cofre abierto yace en la habitacion");
+                Sleep(2300);
+                system("cls");
+            }
         }
         else if(dato>arbol->id)
         {

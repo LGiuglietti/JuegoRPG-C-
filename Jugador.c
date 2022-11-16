@@ -99,17 +99,7 @@ Heroe armaduraoarma(Heroe jugador)
 
 int combate(Heroe* jug)
 {
-    float nivelJugador=jug->cantidadCombates;
-    float statsJugador=0;
-    statsJugador=jug->atk;
-    statsJugador+=jug->armadura;
-    statsJugador=(statsJugador/2);
-
-    nivelJugador+=statsJugador;
-    int nivelJugadorEntero=0;
-    nivelJugadorEntero=nivelJugador;
-
-    Mob aux=depersistenciamob(nivelJugadorEntero);
+    Mob aux=depersistenciamob(jug->cantidadCombates);
     int seescapo=0;///Si escapa se cambiaria a 1 este valor y si no queda igual
     Heroe heroeaux=(*jug);
 
@@ -174,21 +164,55 @@ Heroe ataque(Heroe jugador,Mob* elmob)
 
     if(variableAtaque>=10)
     {
-        printf("atacas con todas tus fuerzas y impactas contra el %s\n", elmob->nombre);
+        printf("atacas con todas tus fuerzas y impactas contra el %s\n", aux.nombre);
         danioAtaque+=jugador.atk;
         aux=mobatacado(aux,danioAtaque);
     }
-    else if(variableAtaque<=9 && variableAtaque>=7)
+    else if(variableAtaque<=9 && variableAtaque>=4)
     {
-        printf("en un cruce de ataques tanto %s como %s reciben danio por igual\n",jugador.nombre,elmob->nombre);
+        printf("en un cruce de ataques tanto %s como %s reciben danio por igual\n",jugador.nombre,aux.nombre);
         aux=mobatacado(aux,danioAtaque);
-        printf("el %s recibe %d puntos de danio\n",elmob->nombre,danioAtaque);
+        printf("el %s recibe %d puntos de danio\n",aux.nombre,danioAtaque);
         jugador=recibedanio(jugador,aux.danio);
     }
     else
     {
-        printf("tu ataque fallo y el %s aprovecha y te ataca\n",elmob->nombre);
+        printf("tu ataque fallo y el %s aprovecha y te ataca\n",aux.nombre);
         jugador=recibedanio(jugador,aux.danio);
+    }
+
+    (*elmob)=aux;
+
+    return jugador;
+}
+
+Heroe ataqueBossMagico(Heroe jugador,Mob* elmob, Objeto conjuro)
+{
+    int variableAtaque=rand()%11+1;
+    int danioAtaque=rand()%7+1;;
+    variableAtaque+=jugador.atk;
+    Mob aux=(*elmob);
+
+    if(variableAtaque>=10)
+    {
+        printf("atacas con todas tus fuerzas y impactas contra el %s\n", aux.nombre);
+        danioAtaque+=jugador.atk;
+        aux=mobatacado(aux,danioAtaque);
+    }
+    else if(variableAtaque<=9 && variableAtaque>=5)
+    {
+        printf("en un cruce de ataques tanto %s como %s reciben danio por igual\n",jugador.nombre,elmob->nombre);
+        printf("el %s uso el conjuro: %s",aux.nombre, conjuro.nombre);
+        aux=mobatacado(aux,danioAtaque);
+        printf("el %s recibe %d puntos de danio\n",aux.nombre,danioAtaque);
+        jugador=recibedanio(jugador,conjuro.modificador);
+    }
+    else
+    {
+        printf("tu ataque fallo y el %s aprovecha y te ataca\n",elmob->nombre);
+        printf("el %s uso el conjuro: %s",aux.nombre, conjuro.nombre);
+        jugador=recibedanio(jugador,conjuro.modificador);
+
     }
 
     (*elmob)=aux;
@@ -381,8 +405,8 @@ void combateBoss(Heroe* jug, int nivelMazmorra)
                 else
                 {
                     conjuro=extraer(&boss.conjuros);
-                    printf("el liche usa el conjuro: %s", conjuro.nombre);
-                    heroeaux.vidaActual-=conjuro.modificador;
+                    heroeaux=ataqueBossMagico(heroeaux,&boss.theboss,conjuro);
+                    varianzaAtaquesLiche++;
                 }
 
             }
@@ -393,10 +417,7 @@ void combateBoss(Heroe* jug, int nivelMazmorra)
             else
             {
                 conjuro=extraer(&boss.conjuros);
-                printf("el Mago Oscuro usa el conjuro: %s", conjuro.nombre);
-                conjuro.modificador=conjuro.modificador/2;
-                conjuro.modificador+=1;
-                heroeaux.vidaActual-=conjuro.modificador;
+                heroeaux=ataqueBossMagico(heroeaux,&boss.theboss,conjuro);
             }
             break;
         case 2:

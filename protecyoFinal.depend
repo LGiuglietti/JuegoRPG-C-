@@ -484,7 +484,7 @@
 1668567327 source:d:\utn\git juego\juegorpg-c-\jugador.c
 	"Jugador.h"
 
-1668567586 d:\utn\git juego\juegorpg-c-\jugador.h
+1668618514 d:\utn\git juego\juegorpg-c-\jugador.h
 	<string.h>
 	<stdio.h>
 	<stdlib.h>
@@ -500,7 +500,7 @@
 	<stdlib.h>
 	"Filas.h"
 
-1668567606 source:d:\utn\git juego\juegorpg-c-\mapa.c
+1668618296 source:d:\utn\git juego\juegorpg-c-\mapa.c
 	"mapa.h"
 
 1668567585 d:\utn\git juego\juegorpg-c-\mapa.h

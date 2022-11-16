@@ -34,4 +34,5 @@ int intentoescape(int seescapo,Mob* elmob);
 void efectoObjetoEnCombate(Objeto objetito,Heroe*jug,Mob*mob);//realiza los efectos del  objeto en combate
 void efectoObjetoFueraDeCombate(Objeto objetito,Heroe*jug);//realiza los efectos fuera del combate
 void combateBoss(Heroe* jug, int nivelMazmorra);
+Heroe ataqueBossMagico(Heroe jugador,Mob* elmob, Objeto conjuro);
 #endif // JUGADOR_H_INCLUDED
