@@ -98,6 +98,7 @@ int esHoja (nodoArbol* nodo)
 nodoArbol*cargaMapa(nodoArbol*arbol)
 {
     arbol=insertar(arbol,4);
+    arbol->estado=1; //para que la primera
     arbol=insertar(arbol,2);
     arbol=insertar(arbol,6);
     arbol=insertar(arbol,1);
@@ -246,25 +247,28 @@ void retroceso(Heroe*jug,nodoArbol*mapa)
     else
     {
         jug->habitacionActual=4;
-        aux=buscarYmostrarRestrocediendo(mapa,jug->habitacionActual);
+        /*aux=buscarYmostrarRestrocediendo(mapa,jug->habitacionActual);*/
     }
 
-    if(aux->estado==1)
+    if(jug->habitacionActual!=4)
     {
         if(aux->encuentro==1)
         {
-            printf("el cadaver de tu enemigo yace en el suelo");
+            printf("el cadaver de tu enemigo yace en el suelo\n");
             Sleep(2300);
-            system("cls");
         }
         else
         {
-            printf("el cofre abierto yace en la habitacion");
+            printf("el cofre abierto yace en la habitacion\n");
             Sleep(2300);
-            system("cls");
         }
     }
-
+    else
+    {
+        printf("regresaste a la entrada de la dungeon");
+        Sleep(2300);
+    }
+system("cls");
 }
 
 nodoArbol*buscarYmostrarRestrocediendo(nodoArbol*arbol, int dato)
