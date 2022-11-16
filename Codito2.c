@@ -88,21 +88,41 @@ nododoble* borrarnodo(nododoble* lista,char dato[])
 {
     if(lista!=NULL)
     {
-        nododoble* aborrar=buscar(lista,dato);
+        nododoble* aborrar;
 
-        if(aborrar!=NULL)
+        if(strcpy(lista->dato.nombre,dato)==0)
         {
-            nododoble* auxante=aborrar->ante;
-            nododoble* auxsig=aborrar->sig;
-
-            auxante->sig=auxsig;
-            auxsig->ante=auxante;
+            aborrar=lista;
+            lista=lista->sig;
             free(aborrar);
         }
         else
         {
-            printf("NO HAY OBJETOS");
+            aborrar=buscar(lista,dato);
+
+            if(aborrar!=NULL)
+            {
+                if(aborrar->sig==NULL)
+                {
+                    (aborrar->ante)->sig=NULL;
+                }
+                else
+                {
+                    (aborrar->ante)->sig=aborrar->sig;
+                    (aborrar->sig)->ante=aborrar->ante;
+                }
+
+                free(aborrar);
+            }
+            else
+            {
+                printf("No existe el objeto solicitado");
+            }
         }
+    }
+    else
+    {
+        printf("NO HAY OBJETOS");
     }
 
     return lista;

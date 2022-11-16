@@ -10,7 +10,7 @@ nodoArbol* crearNodoArbol(int dato)
     aux->id=dato;
     aux->derecha=NULL;
     aux->izquierda=NULL;
-    aux->encuentro=rand()%2;
+    aux->encuentro=/*rand()%2*/1;
     aux->estado=0;
     return aux;
 }

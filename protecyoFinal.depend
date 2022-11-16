@@ -521,7 +521,7 @@
 	<time.h>
 	"Jugador.h"
 
-1668562643 source:c:\users\motta\onedrive\documentos\github\juegorpg-c-\codito2.c
+1668563808 source:c:\users\motta\onedrive\documentos\github\juegorpg-c-\codito2.c
 	"Codito2.h"
 
 1668560665 c:\users\motta\onedrive\documentos\github\juegorpg-c-\codito2.h
@@ -546,14 +546,14 @@
 1668560665 c:\users\motta\onedrive\documentos\github\juegorpg-c-\inventario.h
 	"Codito2.h"
 
-1668562643 source:c:\users\motta\onedrive\documentos\github\juegorpg-c-\main.c
+1668563240 source:c:\users\motta\onedrive\documentos\github\juegorpg-c-\main.c
 	<stdio.h>
 	<stdlib.h>
 	"mapa.h"
 	<time.h>
 	"Jugador.h"
 
-1668562643 c:\users\motta\onedrive\documentos\github\juegorpg-c-\mapa.h
+1668563240 c:\users\motta\onedrive\documentos\github\juegorpg-c-\mapa.h
 	<stdio.h>
 	<stdlib.h>
 	"Jugador.h"
@@ -568,21 +568,21 @@
 	"Mobs.h"
 	"Filas.h"
 
-1668562643 c:\users\motta\onedrive\documentos\github\juegorpg-c-\mobs.h
+1668563240 c:\users\motta\onedrive\documentos\github\juegorpg-c-\mobs.h
 	<string.h>
 	<stdio.h>
 	<stdlib.h>
 	"Filas.h"
 
-1668562643 source:c:\users\motta\onedrive\documentos\github\juegorpg-c-\mapa.c
+1668563854 source:c:\users\motta\onedrive\documentos\github\juegorpg-c-\mapa.c
 	"mapa.h"
 
-1668562964 source:c:\users\motta\onedrive\documentos\github\juegorpg-c-\mobs.c
+1668563240 source:c:\users\motta\onedrive\documentos\github\juegorpg-c-\mobs.c
 	"Mobs.h"
 
 1668560665 source:c:\users\motta\onedrive\documentos\github\juegorpg-c-\objeto.c
 	"Objeto.h"
 
-1668562882 source:c:\users\motta\onedrive\documentos\github\juegorpg-c-\jugador.c
+1668563240 source:c:\users\motta\onedrive\documentos\github\juegorpg-c-\jugador.c
 	"Jugador.h"
 
