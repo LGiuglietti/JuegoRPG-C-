@@ -43,7 +43,7 @@ void verinventario(nododoble* inventario)
 {
     if(inventario==NULL)
     {
-        printf("No hay Objetos");
+        printf("No hay Objetos\n");
     }
     else
     {
@@ -54,7 +54,7 @@ void verinventario(nododoble* inventario)
             limite++;
             printf("%i.---------\n",limite);
         }
-        printf("Que desea utilizar");
+        printf("Que desea utilizar:  ");
     }
 
 }

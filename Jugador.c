@@ -285,7 +285,6 @@ Heroe utilizarObjetoEnCombate(Heroe jugador,Mob*mob)
         }
         opusuario=opusuario-1;
         Objeto elobjeto=buscarobjeto(jugador.inventarioheroe,opusuario);
-        printf("%s", elobjeto.nombre);
         jugador.inventarioheroe=usarobjeto(jugador.inventarioheroe,elobjeto);
         efectoObjetoEnCombate(elobjeto,&jugador,mob);
 
@@ -314,7 +313,7 @@ int intentoescape(int seescapo,Mob* elmob)
 
 void efectoObjetoEnCombate(Objeto objetito,Heroe*jug,Mob*mob)
 {
-    if(objetito.tipo==2) //el item es pocion
+    if(objetito.tipo==2 && jug->vidaActual!=jug->vidaMax) //el item es pocion
     {
         jug->vidaActual=jug->vidaActual+5;
         if(jug->vidaActual>jug->vidaMax)
@@ -340,7 +339,7 @@ void efectoObjetoEnCombate(Objeto objetito,Heroe*jug,Mob*mob)
 
 void efectoObjetoFueraDeCombate(Objeto objetito,Heroe*jug)
 {
-    if(objetito.tipo==2) //el item es pocion
+    if(objetito.tipo==2 && jug->vidaActual!=jug->vidaMax) //el item es pocion
     {
         jug->vidaActual=jug->vidaActual+5;
         if(jug->vidaActual>jug->vidaMax)
@@ -442,7 +441,7 @@ void combateBoss(Heroe* jug, int nivelMazmorra,int *finNivel)
         jug->cantidadCombates++;
         jug->vidaMax+=2;     //sube su vida en 2
         jug->vidaActual+=2;  //se cura en 2
-        printf("Ha Muerto el Jefe del Piso");
+        printf("Ha Muerto el Jefe del Piso\n");
         (*finNivel)=1;
         jug->habitacionActual=4;
         system("pause");

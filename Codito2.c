@@ -99,23 +99,20 @@ nododoble* borrarnodo(nododoble* lista,char dato[])
         else
         {
             nododoble *seg=lista;
-            nododoble *ante=seg;
+            nododoble *ante=NULL;
 
-            while(seg!=NULL)
+            while(seg!=NULL && strcmpi(seg->dato.nombre,dato)!=0)
             {
-                if(strcmpi(seg->dato.nombre,dato)==0)
-                {
-                    aborrar=seg;
-                    seg=seg->sig;
-                    seg->ante=ante;
-                    ante->sig=aborrar->sig;
-                    free(aborrar);
-                }
-                else
-                {
-                    ante=seg;
-                    seg=seg->sig;
-                }
+                ante=seg;
+                seg=seg->sig;
+            }
+            if(seg!=NULL)
+            {
+                aborrar=seg;
+                seg=seg->sig;
+                seg->ante=ante;
+                ante->sig=seg;
+                free(aborrar);
             }
         }
     }
