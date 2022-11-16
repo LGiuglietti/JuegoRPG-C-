@@ -7,7 +7,7 @@ void cargaUsuario(Heroe* jug)
     gets(jug->nombre);
     jug->armadura=0;
     jug->vidaMax=10;
-    jug->atk=1;
+    jug->atk=0;
     jug->vidaActual=10;
     jug->habitacionActual=4;
     jug->cantidadCombates=0;
