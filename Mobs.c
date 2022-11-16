@@ -62,7 +62,7 @@ Mob mobatacado(Mob elmob,int danio)
 {
     elmob.vida-=danio;
 
-    if(elmob.vida==0)
+    if(elmob.vida<=0)
     {
         elmob.estado=0;
     }

@@ -120,7 +120,7 @@ int combate(Heroe* jug)
 
     int variableSwitch=0;
 
-    while(heroeaux.vidaActual!=0 && aux.estado!=0)
+    while(heroeaux.vidaActual>=0 && aux.estado!=0)
     {
         printf("VIDA: %d/%d\t\t\t\t%s: %d\n\n\n\n",jug->vidaActual,jug->vidaMax,aux.nombre,aux.vida);
         printf("Que desea hacer?\n");
@@ -153,12 +153,11 @@ int combate(Heroe* jug)
     }
 
     if((aux.estado==0)&&(seescapo!=1))
-
     {
         system("cls");
-        heroeaux.cantidadCombates++;
-        heroeaux.vidaMax+=2;     //sube su vida en 2
-        heroeaux.vidaActual+=2;  //se cura en 2
+        jug->cantidadCombates++;
+        jug->vidaMax+=2;     //sube su vida en 2
+        jug->vidaActual+=2;  //se cura en 2
         printf("Ha Muerto");
         system("pause");
         system("cls");
