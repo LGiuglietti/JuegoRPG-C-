@@ -10,6 +10,8 @@ void cargaUsuario(Heroe* jug)
     jug->atk=0;
     jug->vidaActual=10;
     jug->habitacionActual=4;
+    jug->cantidadCombates=0;
+    jug->inventarioheroe=inicinventario();
 }
 
 Heroe recogerLootCofre(Heroe jugador)
@@ -100,10 +102,10 @@ int combate(Heroe* jug)
     float nivelJugador=jug->cantidadCombates;
     float statsJugador=0;
     statsJugador=jug->atk;
-    statsJugador=jug->armadura+statsJugador;
+    statsJugador+=jug->armadura;
     statsJugador=(statsJugador/2);
 
-    nivelJugador=nivelJugador+statsJugador;
+    nivelJugador+=statsJugador;
     int nivelJugadorEntero=0;
     nivelJugadorEntero=nivelJugador;
 
@@ -120,7 +122,7 @@ int combate(Heroe* jug)
 
     int variableSwitch=0;
 
-    while(heroeaux.vidaActual!=0 && aux.vida!=0)
+    while(heroeaux.vidaActual!=0 && aux.estado!=0)
     {
         printf("VIDA: %d/%d\t\t\t\t%s: %d\n\n\n\n",jug->vidaActual,jug->vidaMax,aux.nombre,aux.vida);
         printf("Que desea hacer?\n");
@@ -147,11 +149,13 @@ int combate(Heroe* jug)
             break;
         }
 
+        (*jug)=heroeaux;
         system("pause");
         system("cls");
     }
 
-    if(aux.estado==0)
+    if((aux.estado==0)&&(seescapo!=1))
+
     {
         heroeaux.cantidadCombates++;
         heroeaux.vidaMax+=2;     //sube su vida en 2
@@ -199,6 +203,7 @@ Heroe recibedanio(Heroe jugador,int danio)
 
     return jugador;
 }
+
 Heroe utilizarObjetoFueraDeCombate(Heroe jugador)
 {
     verinventario(jugador.inventarioheroe);

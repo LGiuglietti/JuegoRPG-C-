@@ -26,7 +26,7 @@ void persistenciaobj(Objeto elobjeto); /// Carga a un archivo un objeto
 void persistirpergamino(Objeto elobjeto);
 void persistirarma(Objeto elobjeto);
 void persistirarmadura(Objeto elobjeto);
-Objeto depersistirpergamino();///Ultimo es un entero para reposicionar luego el puntero del archivo
+Objeto depersistirpergamino(int ultimo);///Ultimo es un entero para reposicionar luego el puntero del archivo
 Objeto depersistirarma(int ultimo);
 Objeto depersistirarmadura(int ultimo);
 

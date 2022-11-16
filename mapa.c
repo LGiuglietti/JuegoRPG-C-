@@ -6,11 +6,12 @@ nodoArbol* inicArbol()
 }
 nodoArbol* crearNodoArbol(int dato)
 {
+    srand(time(NULL));
     nodoArbol*aux=(nodoArbol*)malloc(sizeof(nodoArbol));
     aux->id=dato;
     aux->derecha=NULL;
     aux->izquierda=NULL;
-    aux->encuentro=rand()%2;
+    aux->encuentro=rand()%1;
     aux->estado=0;
     return aux;
 }
@@ -113,7 +114,6 @@ void avanzarIzquierda(nodoArbol* mapa, int habitacionActual, Heroe* jugador)
         if(mapa->derecha==NULL)
         {
             // combateBoss
-            printf("error boss");
         }
         else
         {
@@ -151,6 +151,7 @@ void avanzarIzquierda(nodoArbol* mapa, int habitacionActual, Heroe* jugador)
                 {
                     (*jugador)=recogerLootCofre((*jugador));
                     aux->estado=1;
+                    jugador->cantidadCombates++;
                 }
 
             }
@@ -161,11 +162,11 @@ void avanzarIzquierda(nodoArbol* mapa, int habitacionActual, Heroe* jugador)
     {
         if(habitacionActual>mapa->id)
         {
-            mapa->derecha=buscarArbol(mapa->derecha,habitacionActual);
+            avanzarIzquierda(mapa->derecha,habitacionActual,jugador);
         }
         else
         {
-            mapa->izquierda=buscarArbol(mapa->izquierda,habitacionActual);
+            avanzarIzquierda(mapa->izquierda,habitacionActual,jugador);
         }
     }
 }
@@ -176,7 +177,6 @@ void avanzarDerecha(nodoArbol*mapa, int habitacionActual, Heroe*jugador)
         if(mapa->derecha==NULL)
         {
             // combateBoss
-            printf("error boss");
         }
         else
         {
@@ -221,11 +221,11 @@ void avanzarDerecha(nodoArbol*mapa, int habitacionActual, Heroe*jugador)
     {
         if(habitacionActual>mapa->id)
         {
-            mapa->derecha=buscarArbol(mapa->derecha,habitacionActual);
+            avanzarDerecha(mapa->derecha,habitacionActual,jugador);
         }
         else
         {
-            mapa->izquierda=buscarArbol(mapa->izquierda,habitacionActual);
+            avanzarDerecha(mapa->izquierda,habitacionActual,jugador);
         }
     }
 }

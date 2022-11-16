@@ -56,7 +56,7 @@ void verinventario(nododoble* inventario)
         while(limite<LIMITE)
         {
             limite++;
-            printf("%i. ---------",limite);
+            printf(" %i.---------",limite);
         }
         printf("Que desea utilizar");
     }
