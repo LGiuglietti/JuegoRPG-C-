@@ -11,7 +11,6 @@ nodoArbol* crearNodoArbol(int dato)
     aux->derecha=NULL;
     aux->izquierda=NULL;
     aux->encuentro=rand()%2;
-    printf("%d", aux->encuentro);
     aux->estado=0;
     return aux;
 }
@@ -295,4 +294,14 @@ nodoArbol*buscarYmostrarRestrocediendo(nodoArbol*arbol, int dato)
     return arbol;
 }
 
-
+void cargaNivelesMapa(celda ada[])
+{
+    int i=0;
+    while(i<3)
+    {
+        ada[i].mapa=inicArbol();
+        ada[i].mapa=cargaMapa(ada[i].mapa);
+        ada[i].nivel=i;
+        i++;
+    }
+}

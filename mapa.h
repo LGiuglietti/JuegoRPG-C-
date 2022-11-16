@@ -13,6 +13,12 @@ typedef struct nodoArbol
     struct nodoArbol* izquierda;//apunta a izquierda
 } nodoArbol;
 
+typedef struct
+{
+    int nivel;
+    nodoArbol *mapa;
+} celda;
+
 nodoArbol* inicArbol();
 nodoArbol* crearNodoArbol(int dato);
 nodoArbol* insertar(nodoArbol* arbol,int dato);
@@ -30,6 +36,7 @@ void avanzarIzquierda(nodoArbol*mapa, int habitacionActual, Heroe*jugador);
 void avanzarDerecha(nodoArbol*mapa, int habitacionActual, Heroe*jugador);
 nodoArbol*buscarYmostrarRestrocediendo(nodoArbol*arbol, int dato);
 void retroceso(Heroe*jug,nodoArbol*mapa);
+void cargaNivelesMapa(celda ada[]);
 // fin prototipado manejo de mapa
 
 #endif // ARBOL_H_INCLUDED

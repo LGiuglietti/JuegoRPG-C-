@@ -500,10 +500,10 @@
 	<stdlib.h>
 	"Filas.h"
 
-1668560681 source:d:\utn\git juego\juegorpg-c-\mapa.c
+1668562230 source:d:\utn\git juego\juegorpg-c-\mapa.c
 	"mapa.h"
 
-1668273985 d:\utn\git juego\juegorpg-c-\mapa.h
+1668562355 d:\utn\git juego\juegorpg-c-\mapa.h
 	<stdio.h>
 	<stdlib.h>
 	"Jugador.h"
@@ -514,7 +514,7 @@
 1668556361 source:d:\utn\git juego\juegorpg-c-\objeto.c
 	"Objeto.h"
 
-1668551502 source:d:\utn\git juego\juegorpg-c-\main.c
+1668562541 source:d:\utn\git juego\juegorpg-c-\main.c
 	<stdio.h>
 	<stdlib.h>
 	"mapa.h"
