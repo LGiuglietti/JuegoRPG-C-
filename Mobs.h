@@ -13,6 +13,7 @@ typedef struct Mob
     char prefacio[200];
     int vida;
     int danio;
+    int defensa;
     int estado;///0 muerto, 1 vivo
 }Mob;
 

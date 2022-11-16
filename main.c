@@ -27,6 +27,12 @@ int main()
 MENU:
         while(fin==0)
         {
+            FILE*archi=fopen("mobs.bin", "rb");
+            Mob mobi;
+            while(fread(&mobi,sizeof(mobi),1,archi)>0)
+            {
+                puts(mobi.nombre);
+            }
             printf("VIDA: %d/%d\n\n\n\n",jugador.vidaActual,jugador.vidaMax);
             printf("\nque desea hacer?\n");
             printf("1: avanzar\t");

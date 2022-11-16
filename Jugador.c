@@ -100,6 +100,7 @@ Heroe armaduraoarma(Heroe jugador)
 int combate(Heroe* jug)
 {
     Mob aux=depersistenciamob(jug->cantidadCombates);
+    printf("%d", jug->cantidadCombates);
     int seescapo=0;///Si escapa se cambiaria a 1 este valor y si no queda igual
     Heroe heroeaux=(*jug);
 

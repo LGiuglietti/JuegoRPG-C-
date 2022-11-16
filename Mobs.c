@@ -49,7 +49,7 @@ Mob depersistenciamob(int ultimo)
 
     if(fp!=NULL)
     {
-        fseek(fp,ultimo*sizeof(Mob),SEEK_SET);
+        fseek(fp,sizeof(Mob)*ultimo,SEEK_SET);
         fread(&nuevo,sizeof(Mob),1,fp);
 
         fclose(fp);

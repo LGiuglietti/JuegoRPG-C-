@@ -481,7 +481,7 @@
 1668273984 d:\utn\git juego\juegorpg-c-\inventario.h
 	"Codito2.h"
 
-1668567327 source:d:\utn\git juego\juegorpg-c-\jugador.c
+1668622674 source:d:\utn\git juego\juegorpg-c-\jugador.c
 	"Jugador.h"
 
 1668618514 d:\utn\git juego\juegorpg-c-\jugador.h
@@ -494,13 +494,13 @@
 	"Mobs.h"
 	"Filas.h"
 
-1668567046 d:\utn\git juego\juegorpg-c-\mobs.h
+1668623732 d:\utn\git juego\juegorpg-c-\mobs.h
 	<string.h>
 	<stdio.h>
 	<stdlib.h>
 	"Filas.h"
 
-1668618296 source:d:\utn\git juego\juegorpg-c-\mapa.c
+1668622943 source:d:\utn\git juego\juegorpg-c-\mapa.c
 	"mapa.h"
 
 1668567585 d:\utn\git juego\juegorpg-c-\mapa.h
@@ -508,13 +508,13 @@
 	<stdlib.h>
 	"Jugador.h"
 
-1668567046 source:d:\utn\git juego\juegorpg-c-\mobs.c
+1668623050 source:d:\utn\git juego\juegorpg-c-\mobs.c
 	"Mobs.h"
 
 1668556361 source:d:\utn\git juego\juegorpg-c-\objeto.c
 	"Objeto.h"
 
-1668567585 source:d:\utn\git juego\juegorpg-c-\main.c
+1668623680 source:d:\utn\git juego\juegorpg-c-\main.c
 	<stdio.h>
 	<stdlib.h>
 	"mapa.h"
